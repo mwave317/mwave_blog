@@ -1,0 +1,11 @@
+.post-content {
+    margin: 0 10px;
+    padding-left: 90px;
+    padding-right: 90px;
+    width: 900px;
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 2em;
+}

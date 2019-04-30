@@ -1,0 +1,49 @@
+.post-body {
+
+    border: 5px solid blue;
+    
+}
+
+.addPost {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.addPost-title { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid blue;
+    width: 320px;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    font-size: 40px;
+    
+    
+
+}
+
+.addPost-body { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid blue;
+    font-size: 25px;
+    height: 400px;
+    width: 320px;
+}
+
+.addPost-button { /* These settings look good for the 6 and the XS Max in landscape */
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    background: blue;
+    color: white;
+    outline: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+
+.addPost-button:hover,
+.addPost-button:active {
+    background: white;
+    color: blue;
+    outline: none;
+}
