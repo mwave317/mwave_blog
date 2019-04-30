@@ -14,13 +14,12 @@ class Header extends Component {
             case false: 
                 return   <a
                 className="App-link"
-                crossorigin="use-credentials"
                 href="/auth/google"
                 target="_blank"
                 rel="noopener noreferrer"
             >Sign in with Google</a>
             default: 
-                return <a crossorigin="use-credentials" href="/api/logout">LogOut</a>
+                return <a href="/api/logout">LogOut</a>
         }
     }
     render() {
