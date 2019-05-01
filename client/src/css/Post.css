@@ -9,9 +9,11 @@
 .post-title {
     font-weight: bold;
     font-size: 2em;
+    margin-top: .5em;
+    margin-bottom: .20em;
 }
 
 .post-break {
     border: .5px solid lightgrey;
-    margin-top: 45px;
+    margin-top: 25px;
 }

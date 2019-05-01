@@ -32,13 +32,10 @@ class App extends Component {
   }
 
   onCommentSubmit(state) {
-    this.setState({ comment: state});
+    this.setState({ comment: state.comment});
   }
 
   render() {
-    console.log('This is the addedTitle', this.state.addedTitle);
-    console.log('This is the addedBody', this.state.addedBody);
-    console.log('This is the comment', this.state.comment);
     let currentLocation = window.location.pathname;
     if (currentLocation === '/') {
       return (
@@ -73,4 +70,9 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, actions)(App);

@@ -14,12 +14,11 @@ export default class Home extends Component {
     }
 
     render() {
-        console.log(this.props);
             return (  
                 <div>
                     <div className="name">
                         <div className="home-post">
-                            <Post title={this.props.title} body={this.props.body} handleChange={this.props.handleChange} />
+                            <Post title={this.props.title} body={this.props.body} />
                                 <div className="home-details">
                                    <Details />
                                 </div> 

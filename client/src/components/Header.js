@@ -19,21 +19,19 @@ class Header extends Component {
                 rel="noopener noreferrer"
             >Sign in with Google</a>
             default: 
-                return <a href="/api/logout">LogOut</a>
+                return <a href="/api/logout">Logout {this.props.auth.firstName}</a>
         }
     }
     render() {
-        console.log(this.props);
-        // console.log(this.props.auth.firstName);
         return (
             <div>
                  <h1 className="title"> My journey in coding</h1>
-                <Link to={this.props.auth ? '/home' : '/' }
+                    <ul className="header-ul">
+                        <li className="header-li"><Link to={this.props.auth ? '/home' : '/' }
                 className="header-logo">mwave317
-                </Link>
-                <p>{this.renderContent()}</p>
-
-               
+                </Link></li>
+                <li className="header-li">{this.renderContent()}</li>
+                    </ul>       
                 <header className="main-header"></header>
             </div>
         );

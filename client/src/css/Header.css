@@ -1,3 +1,19 @@
 a {
    text-decoration : none;
 }
+
+.title {
+   margin-bottom: 0px;
+}
+ul {
+   display: flex;
+   justify-content: space-between;
+   margin: 0px;
+}
+
+li {
+   text-align: space-between;
+   list-style: none;
+   padding-right: 30px;
+
+}
