@@ -27,6 +27,7 @@ export default class AddPost extends Component {
     }
 
     render() {
+        console.log('This is the props from the AddPost', this.props);
         return (
             <div className="addPost">
                 <form>

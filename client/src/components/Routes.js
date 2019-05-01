@@ -22,7 +22,7 @@ export default class Routes extends Component {
         return (
             <div>
                 <Route exact path="/" component={ Landing} />
-                <Route path="/home" component={ Home } />
+                <Route path="/home" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} onCommentSubmit={this.props.onCommentSubmit} />} />
                 <Route path="/about" component={ About } />
                 <Route path="/contact" component={ Contact } />
                 <Route path="/portfolio" component={ Portfolio } />

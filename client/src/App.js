@@ -14,11 +14,12 @@ import Landing from './components/Landing';
 
 class App extends Component {
   state = {
-    title: ' ',
-    body: ' ',
+    title: 'This is the title ',
+    body: ' This is the body ',
     data: [],
     addedTitle: ' ',
     addedBody: ' ',
+    comment: ' ',
     intervalisSet: false,
   }
 
@@ -30,10 +31,14 @@ class App extends Component {
     this.setState({ addedTitle: state.title, addedBody: state.body });
   }
 
+  onCommentSubmit(state) {
+    this.setState({ comment: state});
+  }
 
   render() {
     console.log('This is the addedTitle', this.state.addedTitle);
     console.log('This is the addedBody', this.state.addedBody);
+    console.log('This is the comment', this.state.comment);
     let currentLocation = window.location.pathname;
     if (currentLocation === '/') {
       return (
@@ -58,7 +63,7 @@ class App extends Component {
               <Header />
               <div className="home-post">
                 <Nav />
-                <Routes addedBody={this.addedBody} addedTitle={this.addedTitle} onFormSubmit={this.onFormSubmit.bind(this)} />
+                <Routes title={this.state.title} body={this.state.body} addedBody={this.state.addedBody} addedTitle={this.state.addedTitle} onFormSubmit={this.onFormSubmit.bind(this)} onCommentSubmit={this.onCommentSubmit.bind(this)} />
               </div>
             </div>
           </BrowserRouter>

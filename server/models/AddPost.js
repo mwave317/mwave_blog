@@ -16,6 +16,11 @@ const addPostSchema = new Schema({
     timestamp: {
         type: Date,
         default: Date.now(),
+    }, 
+
+    category: {
+        type: String,
+        required: [true]
     }
 });
 

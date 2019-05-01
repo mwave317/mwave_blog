@@ -3,13 +3,14 @@ import '../css/Post.css';
 import '../css/Media.css';
 
 export default class Post extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
             this.state = {
             }
         }
 
         render() {
+            console.log(this.props);
             return (
             <div className="post-content">
                     <p className="post-title">CREATING A PYRAMID</p>
@@ -25,6 +26,7 @@ export default class Post extends Component {
                     <p>}</p>
                     <p>}</p>
                     <p>pyramid(3);</p>
+                    <div className="post-break"></div>
                 </div>
             )
         }
