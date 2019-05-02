@@ -19,12 +19,13 @@ export default class Home extends Component {
                     <div className="name">
                         <div className="home-post">
                             <Post title={this.props.title} body={this.props.body} />
-                                <div className="home-details">
-                                   <Details />
+                                <div className="home-details"> 
+                                   <Details onCommentSubmit={this.props.onCommentSubmit } />
                                 </div> 
                         </div>
+                            
                     </div> 
-                    <Comment onCommentSubmit={this.props.onCommentSubmit} /> 
+                    
                 </div>
             )  
     }

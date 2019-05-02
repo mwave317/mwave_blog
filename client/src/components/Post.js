@@ -23,7 +23,6 @@ export default class Post extends Component {
                     <p>}</p>
                     <p>}</p>
                     <p>pyramid(3);</p>
-                    <div className="post-break"></div>
                 </div>
             )
         }

@@ -1,14 +1,6 @@
-.main-header {
-    height: 250px;
-}
-
 .name {
     display: flex;
     align-items: flex-start;
-}
-
-.home-post {
-    display: inline-flex;
 }
 
 .title {
@@ -16,5 +8,5 @@
 }
 
 .home-details {
-    display: inline-flex;
+    display: inline-block;
 }

@@ -8,5 +8,4 @@ const aboutSchema = new Schema({
         type: String,
         required: true,
     },
-
 });

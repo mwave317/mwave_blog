@@ -6,6 +6,7 @@ export default class Comment extends Component {
         super(props);
             this.state = {
                 comment: '',
+                reviewed: false,
                 active: false,
             }
     }
@@ -18,7 +19,8 @@ export default class Comment extends Component {
         if (ev.target.value.includes('<script>')) {
             this.setState({comment: ''})
         } else {
-            this.setState({ [state] : ev.target.value});
+            this.setState({ [state] : ev.target.value, reviewed: this.state.reviewed});
+            console.log(this.state);
             this.props.onCommentSubmit(this.state);
         }
     }
@@ -35,7 +37,7 @@ export default class Comment extends Component {
         const toggleActiveState = this.state.active ? 'comment-add' : 'hide';
         const commentStatus = !this.state.active && this.state.comment === ' ' ? 'Your comment is waiting for review.' : 'Leave a Comment';
         return (
-            <div className="comment">
+            <div>
                   <p onClick={this.toggleClass}>{commentStatus}</p> 
                     <textarea className={toggleActiveState} onChange= { ev => this.handleChange ('comment', ev)}
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />

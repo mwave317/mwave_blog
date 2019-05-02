@@ -9,6 +9,7 @@ ul {
    display: flex;
    justify-content: space-between;
    margin: 0px;
+   padding-bottom: 10px;
 }
 
 li {
@@ -16,4 +17,9 @@ li {
    list-style: none;
    padding-right: 30px;
 
+}
+
+.main-header {
+   height: 400px;
+   margin-bottom: 20px;
 }

@@ -10,17 +10,17 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 
-
-
 class App extends Component {
   state = {
-    title: 'This is the title ',
-    body: ' This is the body ',
+    title: '',
+    body: '',
     data: [],
     addedTitle: ' ',
     addedBody: ' ',
     comment: ' ',
     intervalisSet: false,
+    reviewed: true,
+    loggedIn: true,
   }
 
   componentDidMount() {
@@ -32,12 +32,14 @@ class App extends Component {
   }
 
   onCommentSubmit(state) {
-    this.setState({ comment: state.comment});
+    this.setState({ comment: state.comment, reviewed: state.reviewed });
   }
 
   render() {
+    console.log(this.state);
+    console.log(this.props.auth);
     let currentLocation = window.location.pathname;
-    if (currentLocation === '/') {
+    if (this.props.auth && currentLocation === '/' ) {
       return (
 
         <div>
@@ -54,11 +56,10 @@ class App extends Component {
     } else {
       return (
         <div >
-
           <BrowserRouter>
             <div>
               <Header />
-              <div className="home-post">
+              <div className="main-layout">
                 <Nav />
                 <Routes title={this.state.title} body={this.state.body} addedBody={this.state.addedBody} addedTitle={this.state.addedTitle} onFormSubmit={this.onFormSubmit.bind(this)} onCommentSubmit={this.onCommentSubmit.bind(this)} />
               </div>

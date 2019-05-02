@@ -6,3 +6,8 @@
     text-align: center;
 }
 
+.main-layout {
+    display: inline-flex;
+    background-color: white;
+}
+

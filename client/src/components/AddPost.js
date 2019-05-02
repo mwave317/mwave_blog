@@ -8,13 +8,14 @@ export default class AddPost extends Component {
         this.state = {
             title: '',
             body: '',
+            category: '',
         }
     }
 
 
     handleChange(state, ev) {
         if (ev.target.value.includes('<script>')) {
-            this.setState({title: '', body: ''})
+            this.setState({title: '', body: '', category: ''})
         } else {
             this.setState({ [state] : ev.target.value});
         }
@@ -28,6 +29,7 @@ export default class AddPost extends Component {
 
     render() {
         console.log('This is the props from the AddPost', this.props);
+        console.log('This is state', this.state);
         return (
             <div className="addPost">
                 <form>
@@ -38,6 +40,15 @@ export default class AddPost extends Component {
                     type='text' placeholder='Write something moving and informative.' value= {this.state.body } />
 
                     <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
+                    <div>
+                        <label>Choose a category:</label>
+                        <select value={this.state.category} onChange={ev => this.handleChange ('category', ev)}>
+                            <option value="javascript">JavaScript</option>
+                            <option value="react">React</option>
+                            <option value="angular">Angular</option>
+                            <option value="mongodb">Mongo DB</option>
+                        </select>
+                    </div>
                 </form>
             </div>
             

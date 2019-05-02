@@ -4,12 +4,31 @@
       height: 400px;
     }
 
+    .main-layout {
+      display: inline-flex;
+      margin-left: 22em;
+      padding-right: 60px;
+      background-color: white;
+  }
+
+    .home-post {
+      display: inline-flex;
+    }
+
     .post-content {
       padding-left: 50px;
     }
 
     .post-title {
       font-size: 2em;
+    }
+
+    .comment-add {
+      width: 500px;
+    }
+
+    .addPost {
+      width: 900px;
     }
 
     .addPost-title {
@@ -46,6 +65,7 @@
     }
     .post-content {
       padding-left: 50px;
+      width: 900px;
     }
   }
   /* XS Max Landscape */
@@ -54,6 +74,13 @@
       background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover no-repeat border-box;
       height: 400px;  
     }
+
+    .main-layout {
+      display: inline-flex;
+      margin-left: 20em;
+      padding-right: 60px;
+      background-color: white;
+  }
     .post-content {
       padding-left: 50px;
   }
@@ -78,6 +105,10 @@
     .main-header {
       background: url("../images/trees_436hx581w.jpg") 10% 35%/cover no-repeat border-box ;
     }
+
+    .main-layout {
+      margin: 0em, 2em;
+    }
   }
 
   /* XS (Portrait) */
@@ -94,8 +125,15 @@
       background: url("../images/trees_436hx581w.jpg") 0% 50%/cover no-repeat border-box;
     }
 
+    .main-layout {
+      margin: 0em 1em;
+    }
+  
     .post-title {
       font-size: 1.5em;
+    }
+    .comment-add {
+      width: 240px;
     }
 
     .addPost-title {
@@ -130,7 +168,30 @@
     .main-header {
       background: url("../images/trees_240h_x320w.jpg") 0% 50%/cover no-repeat border-box;
       padding-left: 5px;
-  
     }
-  }
+
+    .main-layout {
+      display: inline-flex;
+      padding-right: 60px;
+      background-color: white;
+    }
+
+    .comment-add {
+      width: 9000px;
+    }
+
+    .post-content {
+      margin: 20px 30px 0px 10px;
+      padding: 0px 20px 0px 25px; 
+      /* Need to change the left padding for smaller screens */
+      white-space: pre-line;
+    }
+
+    .post-title {
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: .5em;
+    margin-bottom: .20em;  
+    }
+}
   
