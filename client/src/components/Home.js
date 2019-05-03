@@ -3,7 +3,6 @@ import '../css/Home.css';
 import '../css/Media.css';
 import Post from './Post';
 import Details from './Details';
-import Comment from './Comment';
 
 export default class Home extends Component {
     constructor(props) {
