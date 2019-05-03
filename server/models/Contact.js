@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const contactSchema = new Schema({
-    _user: { 
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+    sender: { 
+        type: String,
+        required: true,
      },
     body: {
         type: String,

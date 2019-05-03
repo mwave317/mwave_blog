@@ -21,6 +21,7 @@ export default class Routes extends Component {
         // console.log(this.props);
         // console.log(this.state.path);
         return (
+
             <div>
                 <Route exact path="/" component={ Landing} />
                 <Route path="/home" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} onCommentSubmit={this.props.onCommentSubmit} />} />

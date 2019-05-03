@@ -5,10 +5,15 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import './index.css';
-
+import reducers from './components/reducers';
 import App from './App';
 
-import reducers from './components/reducers';
+import axios from 'axios';
+window.axios = axios;
+
+
+
+
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
