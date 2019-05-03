@@ -19,6 +19,7 @@ export default class Routes extends Component {
  
     render() {
         // console.log(this.props);
+        // console.log(this.state.path);
         return (
             <div>
                 <Route exact path="/" component={ Landing} />

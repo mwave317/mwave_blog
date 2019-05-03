@@ -6,7 +6,6 @@ export default class Comment extends Component {
         super(props);
             this.state = {
                 comment: '',
-                reviewed: false,
                 active: false,
             }
     }
@@ -19,7 +18,7 @@ export default class Comment extends Component {
         if (ev.target.value.includes('<script>')) {
             this.setState({comment: ''})
         } else {
-            this.setState({ [state] : ev.target.value, reviewed: this.state.reviewed});
+            this.setState({ [state] : ev.target.value });
             console.log(this.state);
             this.props.onCommentSubmit(this.state);
         }

@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+const CommentSchema = requre('./Comment');
 
-const addPostSchema = new Schema({
+const postSchema = new Schema({
     title: {
         type: String,
         required: [true,
@@ -21,8 +22,13 @@ const addPostSchema = new Schema({
     category: {
         type: String,
         required: [true]
-    }
+    },
+    _comment: {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment',
+        body: [CommentSchema]
+     }
 });
 
 
-mongoose.model("posts", addPostSchema);
+mongoose.model("posts", postSchema);

@@ -8,7 +8,6 @@ import * as actions from './actions';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
-import Landing from './components/Landing';
 
 class App extends Component {
   state = {
@@ -46,8 +45,8 @@ class App extends Component {
           <BrowserRouter>
             <div>
               <Header />
-              <div className="home-post">
-                <Landing />
+              <div className="main-layout">
+              <Routes />
               </div>
             </div>
           </BrowserRouter>

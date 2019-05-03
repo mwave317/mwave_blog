@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const contactSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-    },
+    _user: { 
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+     },
     body: {
         type: String,
         required: true,
@@ -18,7 +18,7 @@ const contactSchema = new Schema({
     },
     recipient: {
         type: String,
-        required: true,
+        default: 'mwave317@gmail.com',
     }
 });
 

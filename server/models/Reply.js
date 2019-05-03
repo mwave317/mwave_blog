@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const ReplySchema = require('./Reply')
 
-const commentSchema = new Schema({
-   comment: { 
+const replySchema = new Schema({
+   reply: { 
     type:String,
     required: true,
    },
@@ -11,23 +10,18 @@ const commentSchema = new Schema({
     type: Date,
     default: Date.now(),
    },
-   verified: {
+   reviewed: {
     type: Boolean,
     default: false,
    },
    _user: { 
       type: Schema.Types.ObjectId,
       ref: 'User',
-   },
-   _post: {
+   }, 
+   _comment: { 
       type: Schema.Types.ObjectId,
-      ref: 'Post',
+      ref: 'Comment',
    },
-   _reply: {
-      type: Schema.Types.ObjectId,
-      ref: 'Reply',
-      body: [ReplySchema],
-   }
 });
 
-mongoose.model('contact', commentSchema);
+module.exports = replySchema;
