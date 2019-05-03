@@ -30,4 +30,4 @@ const commentSchema = new Schema({
    }
 });
 
-mongoose.model('contact', commentSchema);
+mongoose.model('comment', commentSchema);

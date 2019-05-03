@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const CommentSchema = requre('./Comment');
+const CommentSchema = require('./Comment');
 
 const postSchema = new Schema({
     title: {
@@ -31,4 +31,4 @@ const postSchema = new Schema({
 });
 
 
-mongoose.model("posts", postSchema);
+mongoose.model('posts', postSchema);
