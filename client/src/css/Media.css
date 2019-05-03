@@ -1,4 +1,5 @@
 @media only screen and (min-width:1242px) and (max-width:2688px) {
+  /* Desktop Monitor */
     .main-header {
       background: url("../images/trees_2016hx2688w.jpg") 10% 35%/cover no-repeat border-box;
       height: 400px;
@@ -17,15 +18,36 @@
     }
 
     .post-content {
+      margin: 20px 30px 0px 10px;
+      padding: 0px 20px 0px 25px; 
       padding-left: 50px;
-    }
+      /* Need to change the left padding for smaller screens */
+  }
 
     .post-title {
       font-size: 2em;
+      margin-top: .5em;
     }
 
     .comment-add {
       width: 400px;
+    }
+
+    .about {
+      padding-left: 15px;
+  }
+
+    .about-title {
+      font-size: 2em;
+      margin-top: .75em;
+    }
+
+    .contact-title {
+      margin-top: 1.15em;
+    }
+
+    .portfolio-title {
+      font-size: 2em;
     }
 
     .addPost {
@@ -34,7 +56,6 @@
 
     .addPost-title {
       display: block;
-      border: 4px solid blue;
       width: 900px;
       padding-bottom: 20px;
       margin: 20px 0;
@@ -59,6 +80,7 @@
 }
   
   @media only screen and (min-width:1025px) {
+    /* Laptop */
   
     .main-header {
       background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover no-repeat border-box;
@@ -84,8 +106,7 @@
   }
     .post-content {
       padding-left: 50px;
-  }
-
+    }
   }
   /* XS Max Portrait */
   @media only screen and (min-width: 414px) and (orientation: portrait) {
@@ -93,11 +114,37 @@
       background: url("../images/trees_436hx581w.jpg") 10% 35%/cover no-repeat border-box ;
     }
   }
-  /* Tablet (Landscape) */
-  @media only screen and (min-width:769px) and (max-width:1024px) {
+
+  @media only screen and (min-width : 768px) and (max-width : 1024px) {
+    
+  }
+  /* Ipad Landscape and Portrait */
+  @media only screen and (min-width:768px) and (max-width:1024px) {
   
     .main-header {
       background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover border-box;
+    }
+    .post-title {
+      margin-top: 2.5em;
+    }
+
+    .post-content {
+    margin: 20px 30px 0px 50px;
+    padding: 0px 50px 0px 35px; 
+    padding-left: 50px;
+    }
+
+    .about {
+      padding-left: 55px;
+  }
+
+    .contact-title {
+      font-size: 1em;
+      margin-top: 2.5em;
+    }
+
+    .portfolio-title {
+      margin-top: 2.5em;
     }
   }
   /* Tablet (Portrait) */
@@ -117,6 +164,58 @@
   .post-title {
     font-size: 2em;    /*Looks good on the phone */
   }
+
+  .post-title {
+    color: blue;
+  }
+}
+
+@media only screen and (min-width:375px) and (max-width:667px) {
+  /* For 6,7, & 8 in landscape */
+  .main-header {
+    background: url("../images/trees_240h_x320w.jpg") 0% 50%/cover no-repeat border-box;
+    padding-left: 5px;
+  }
+
+  .main-layout {
+    display: inline-flex;
+    padding-right: 60px;
+    background-color: white;
+  }
+
+  .comment-add {
+    width: 450px;
+  }
+
+  .post-content {
+    margin: 20px 30px 0px 10px;
+    padding: 0px 20px 0px 25px; 
+    /* Need to change the left padding for smaller screens */
+    white-space: pre-line;
+  }
+
+  .post-title {
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 2.5em;
+  margin-bottom: .20em;  
+  }
+
+  .about-title {
+    margin-top: 1.5em;
+    font-size: 1em;
+  }
+
+  .contact-title {
+    margin-top: 2.5em;
+    font-size: 1em;
+  }
+
+  .portfolio-title {
+    margin-top: 2.5em;
+    font-size: 1em;
+  }
+
 }
   
   /* Phone (Landscape) */
@@ -126,12 +225,9 @@
       background: url("../images/trees_436hx581w.jpg") 0% 50%/cover no-repeat border-box;
     }
 
-    .main-layout {
-      margin: 0em 1em;
-    }
-  
     .post-title {
-      font-size: 1.5em;
+      font-size: 1em;
+      margin-top: 2.5em;
     }
     .comment-add {
       width: 240px;
@@ -191,7 +287,7 @@
     .post-title {
     font-weight: bold;
     font-size: 1em;
-    margin-top: .5em;
+    margin-top: 2.5em;
     margin-bottom: .20em;  
     }
 }

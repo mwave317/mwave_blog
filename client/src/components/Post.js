@@ -12,17 +12,17 @@ export default class Post extends Component {
         render() {
             return (
             <div className="post-content">
-                    <p className="post-title">CREATING A PYRAMID</p>
-                    <p>If the parameter being passed is 3, the third row will have five hashtags. To get the correct number of columns you will need to find the midpoint. This is done by first finding out how many columns will be needed using (2*n-1). Next, divide the result by 2.  The midpoint is now 2.5, using Math.floor the midpoint will be 2.</p>
-                    <p>function pyramid(n) {'{'}  </p>
-                    <p>const midpoint = Math.floor((2*n -1) /2);</p>
-                    <p>let level = '';</p>
-                    <p>(midpoint – row =column) ? level += ‘#’: level += ‘ ‘;</p>
-                    <p>}</p>
-                    <p>console.log(level);</p>
-                    <p>}</p>
-                    <p>}</p>
-                    <p>pyramid(3);</p>
+                    <h4 className="post-title">Creating a Pyramid</h4>
+                    <p className="post-line">If the parameter being passed is 3, the third row will have five hashtags. To get the correct number of columns you will need to find the midpoint. This is done by first finding out how many columns will be needed using (2*n-1). Next, divide the result by 2.  The midpoint is now 2.5, using Math.floor the midpoint will be 2.</p>
+                    <p className="post-line">function pyramid(n) {'{'}  </p>
+                    <p className="post-line">const midpoint = Math.floor((2*n -1) /2);</p>
+                    <p className="post-line">let level = '';</p>
+                    <p className="post-line">(midpoint – row =column) ? level += ‘#’: level += ‘ ‘;</p>
+                    <p className="post-line">}</p>
+                    <p className="post-line">console.log(level);</p>
+                    <p className="post-line">}</p>
+                    <p className="post-line">}</p>
+                    <p className="post-line">pyramid(3);</p>
                 </div>
             )
         }
