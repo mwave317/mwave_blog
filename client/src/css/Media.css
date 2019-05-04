@@ -7,8 +7,7 @@
 
     .main-layout {
       display: inline-flex;
-      margin-left: 20em;
-      width: 1500px;
+      /* margin-left: 20em; */
       padding-right: 60px;
       background-color: white;
   }
@@ -30,7 +29,7 @@
     }
 
     .comment-add {
-      width: 400px;
+      width: 18vw;
     }
 
     .about {
@@ -79,7 +78,7 @@
   }
 }
   
-  @media only screen and (min-width:1025px) {
+  @media only screen and (min-width:992px) {
     /* Laptop */
   
     .main-header {
@@ -89,6 +88,9 @@
     .post-content {
       padding-left: 50px;
       width: 900px;
+    }
+    .comment-add {
+      width: 20vw;
     }
   }
   /* XS Max Landscape */
@@ -100,7 +102,7 @@
 
     .main-layout {
       display: inline-flex;
-      margin-left: 5em;
+      /* margin-left: 5em; */
       padding-right: 60px;
       background-color: white;
   }
@@ -109,11 +111,11 @@
     }
   }
   /* XS Max Portrait */
-  @media only screen and (min-width: 414px) and (orientation: portrait) {
+  /* @media only screen and (min-width: 414px) and (orientation: portrait) {
     .main-header {
       background: url("../images/trees_436hx581w.jpg") 10% 35%/cover no-repeat border-box ;
     }
-  }
+  } */
 
   @media only screen and (min-width : 768px) and (max-width : 1024px) {
     
@@ -133,6 +135,10 @@
     padding: 0px 50px 0px 50px; 
     }
 
+    .comment-add {
+      width: 55vw;
+    }
+
     .about {
       padding-left: 55px;
   }
@@ -144,17 +150,6 @@
 
     .portfolio-title {
       margin-top: 2.5em;
-    }
-  }
-  /* Tablet (Portrait) */
-  @media only screen and (min-width:581px) and (max-width:768px) {
-  
-    .main-header {
-      background: url("../images/trees_436hx581w.jpg") 10% 35%/cover no-repeat border-box ;
-    }
-
-    .main-layout {
-      margin: 0em, 2em;
     }
   }
 
@@ -178,7 +173,7 @@
 
   .main-layout {
     display: inline-flex;
-    padding-right: 60px;
+    /* padding-right: 60px; */
     background-color: white;
   }
 
@@ -187,7 +182,7 @@
   }
 
   .comment-add {
-    width: 450px;
+    width: 60vw;
   }
 
   .post-content {
@@ -233,7 +228,7 @@
       margin-top: 2.5em;
     }
     .comment-add {
-      width: 240px;
+      width: 50vw;
     }
 
     .addPost-title {
@@ -272,12 +267,13 @@
 
     .main-layout {
       display: inline-flex;
-      padding-right: 60px;
+      width: 100vw;
+      /* padding-right: 60px; */
       background-color: white;
     }
     
     .comment-add {
-      width: 9000px;
+      width: 55vw;
     }
 
     .post-content {

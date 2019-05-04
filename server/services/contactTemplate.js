@@ -1,3 +1,3 @@
-module.exports = (contact, ) => {
+module.exports = contact => {
 return '<div>' + contact.body + '</div>';
 };

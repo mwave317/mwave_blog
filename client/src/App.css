@@ -8,6 +8,8 @@
 
 .main-layout {
     display: inline-flex;
+    margin-left: 6vw;
+    width: 85vw;
     background-color: white;
 }
 
