@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import '../css/Comment.css';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class Comment extends Component {
+class Comment extends Component {
     constructor(props){
         super(props);
             this.state = {
                 comment: '',
                 active: false,
+                commentStatus: 'Leave a comment',
             }
     }
 
     toggleClass = () => {
-        this.setState({active: !this.state.active});
-    }
+        if (this.props.auth) {
+            this.setState({active: !this.state.active});
+        this.setState({commentStatus: 'Leave a comment'});
+        } else {
+            this.setState({commentStatus: 'Log in to comment'});
+        }
+}
 
     handleChange(state, ev) {
         if (ev.target.value.includes('<script>')) {
@@ -26,21 +34,27 @@ export default class Comment extends Component {
 
     keyPress(ev) {
         if (ev.key === "Enter") {
-            this.setState({active: !this.state.active, comment: ' ' });
+            this.setState({active: !this.state.active, comment: ' ', commentStatus : 'Your comment is waiting for review.'});
         } else {
             this.setState({active: true})
         }
     }
 
     render() {
-        const toggleActiveState = this.state.active ? 'comment-add' : 'hide';
-        const commentStatus = !this.state.active && this.state.comment === ' ' ? 'Your comment is waiting for review.' : 'Leave a Comment';
+        console.log(this.props.auth);
+        const toggleActiveState = this.state.active ? 'comment-add' : 'hide'; 
         return (
             <div>
-                  <p onClick={this.toggleClass}>{commentStatus}</p> 
+                  <p onClick={this.toggleClass}>{this.state.commentStatus}</p> 
                     <textarea className={toggleActiveState} onChange= { ev => this.handleChange ('comment', ev)}
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />
             </div>
         )
     }
 }
+
+function mapStateToProps({ auth }) {
+    return { auth };
+  }
+  
+  export default connect(mapStateToProps, actions)(Comment);

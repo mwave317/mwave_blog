@@ -17,6 +17,9 @@ class App extends Component {
     addedTitle: ' ',
     addedBody: ' ',
     comment: ' ',
+    sender: '',
+    subject: '',
+    contactBody: '',
     intervalisSet: false,
     reviewed: true,
     loggedIn: true,
@@ -27,7 +30,7 @@ class App extends Component {
   }
 
   onFormSubmit(state) {
-    this.setState({ addedTitle: state.title, addedBody: state.body });
+    this.setState({ addedTitle: state.title, addedBody: state.body, sender: state.sender, subject: state.subject, contactBody: state.contactBody });
   }
 
   onCommentSubmit(state) {
@@ -37,22 +40,7 @@ class App extends Component {
   render() {
     console.log(this.state);
     console.log(this.props.auth);
-    let currentLocation = window.location.pathname;
-    if (this.props.auth && currentLocation === '/' ) {
-      return (
-
-        <div>
-          <BrowserRouter>
-            <div>
-              <Header />
-              <div className="main-layout">
-              <Routes />
-              </div>
-            </div>
-          </BrowserRouter>
-        </div>
-      );
-    } else {
+    // let currentLocation = window.location.pathname;
       return (
         <div >
           <BrowserRouter>
@@ -68,7 +56,6 @@ class App extends Component {
       )
     }
   }
-}
 
 
 function mapStateToProps({ auth }) {

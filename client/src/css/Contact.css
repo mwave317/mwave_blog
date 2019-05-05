@@ -1,3 +1,65 @@
+.contact {
+    display: block;
+    justify-content: center;
+    padding-left: 10vw;
+}
+
 .contact-title {
-    padding-left: 15px;
+    font-size: 2em;
+}
+
+.contact-sender { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid gray;
+    width: 50vw;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.contact-sender:focus {
+    outline: none;
+}
+
+.contact-subject { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid gray;
+    width: 50vw;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.contact-subject:focus {
+    outline: none;
+}
+
+.contact-body { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid gray;
+    font-size: 2em;
+    height: 150px;
+    width: 50vw;
+}
+
+.contact-body:focus {
+    outline: none;
+}
+
+.contact-button { /* These settings look good for the 6 and the XS Max in landscape */
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    background: gray;
+    color: white;
+    outline: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+
+.contact-button:hover,
+.contact-button:active {
+    background: white;
+    color: gray;
+    outline: none;
 }

@@ -21,7 +21,7 @@ export default class AddPost extends Component {
         }
     }
 
-    submitForm = (event, state) => {
+    submitForm = (event) => {
         event.preventDefault();
         this.setState({title: event.target.value, body: event.target.value});
         this.props.onFormSubmit(this.state);
@@ -34,10 +34,10 @@ export default class AddPost extends Component {
             <div className="addPost">
                 <form>
                     <input className="addPost-title" onChange= { ev => this.handleChange ('title', ev)}
-                    type='text' placeholder='Catching title' value= {this.state.title } />
+                    type='text' placeholder='Title' value= {this.state.title } />
 
                     <textarea className="addPost-body" onChange= { ev => this.handleChange ('body', ev)}
-                    type='text' placeholder='Write something moving and informative.' value= {this.state.body } />
+                    type='text' placeholder='Body.' value= {this.state.body } />
 
                     <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
                     <div>
