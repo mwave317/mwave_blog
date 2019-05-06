@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Nav.css';
@@ -29,7 +30,6 @@ export default class Nav extends Component {
                     <Link className="nav-link" to="/home">Home</Link>
                     <Link className="nav-link" to="/about">About</Link>
                     <Link className="nav-link" to="/contact">Contact</Link>
-                    <Link className="nav-link" to="/portfolio">Portfolio</Link>
                     <Link className="nav-link" to="/addpost">AddPost</Link>
                  </div>       
             </div>

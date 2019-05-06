@@ -33,6 +33,5 @@ passport.deserializeUser((id, done) => {
                     lastName: profile.name.familyName, email: profile.emails[0].value
                 }).save();
                 done(null, user)
-        }
-    )
+        })
 );

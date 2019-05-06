@@ -4,7 +4,13 @@
     padding-left: 8vw;
 }
 
-.addPost-title { /* These settings look good for the 6 and the XS Max in landscape */
+.addPost-title {
+    display: block;
+    margin-top: 1.2em;
+    font-size: 2em;
+}
+
+.addPost-heading { /* These settings look good for the 6 and the XS Max in landscape */
     display: block;
     border: 4px solid gray;
     width: 50vw;
@@ -13,7 +19,7 @@
     font-size: 2em;
 }
 
-.addPost-title:focus {
+.addPost-heading:focus {
     outline: none;
 }
 

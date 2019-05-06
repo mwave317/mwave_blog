@@ -8,6 +8,7 @@ import './index.css';
 import reducers from './components/reducers';
 import App from './App';
 
+// Delete the below two lines after the backend is working
 import axios from 'axios';
 window.axios = axios;
 

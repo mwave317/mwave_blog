@@ -27,7 +27,7 @@ class Header extends Component {
             <div>
                  <h1 className="title"> My journey in coding</h1>
                     <ul className="header-ul">
-                        <li className="header-li"><Link to={this.props.auth ? '/home' : '/' }
+                        <li className="header-li"><Link to={'/' }
                 className="header-logo">mwave317
                 </Link></li>
                 <li className="header-li">{this.renderContent()}</li>

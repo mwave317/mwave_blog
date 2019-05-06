@@ -1,22 +1,26 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const SenderSchema = require('./Sender');
 
 
 const contactSchema = new Schema({
-    senders: SenderSchema,
+    from: String,
     body: {
         type: String,
     },
     subject: {
         type: String,
     },
-    recipient: {
-        type: String ,
-        default: 'mwave317@gmail.com',
-}, 
+    to: {
+        type: String,
+    },
+    text: {
+        type: String,
+    },
+    html: {
+        type: String
+    },
     _user: { type: Schema.Types.ObjectId, ref: 'User'},
-    timeStamp: Date,
+    timeStamp: Date, 
 });
 
 mongoose.model('contact', contactSchema);

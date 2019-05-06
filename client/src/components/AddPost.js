@@ -32,15 +32,17 @@ export default class AddPost extends Component {
         console.log('This is state', this.state);
         return (
             <div className="addPost">
+                
                 <form>
-                    <input className="addPost-title" onChange= { ev => this.handleChange ('title', ev)}
+                <h2 className="addPost-title">Add Post</h2>
+                    <input className="addPost-heading" onChange= { ev => this.handleChange ('title', ev)}
                     type='text' placeholder='Title' value= {this.state.title } />
 
                     <textarea className="addPost-body" onChange= { ev => this.handleChange ('body', ev)}
                     type='text' placeholder='Body.' value= {this.state.body } />
 
                     <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
-                    <div>
+                    {/* <div>
                         <label>Choose a category:</label>
                         <select value={this.state.category} onChange={ev => this.handleChange ('category', ev)}>
                             <option value="javascript">JavaScript</option>
@@ -48,7 +50,7 @@ export default class AddPost extends Component {
                             <option value="angular">Angular</option>
                             <option value="mongodb">Mongo DB</option>
                         </select>
-                    </div>
+                    </div> */}
                 </form>
             </div>
             

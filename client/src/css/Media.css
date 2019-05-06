@@ -93,39 +93,18 @@
       width: 20vw;
     }
   }
-  /* XS Max Landscape */
-  @media only screen and (min-width: 896px) and (orientation: landscape) {
-    .main-header {
-      background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover no-repeat border-box;
-      height: 400px;  
-    }
 
-    .main-layout {
-      display: inline-flex;
-      /* margin-left: 5em; */
-      padding-right: 60px;
-      background-color: white;
-  }
-    .post-content {
-      padding-left: 50px;
-    }
-  }
-  /* XS Max Portrait */
-  /* @media only screen and (min-width: 414px) and (orientation: portrait) {
-    .main-header {
-      background: url("../images/trees_436hx581w.jpg") 10% 35%/cover no-repeat border-box ;
-    }
-  } */
-
-  @media only screen and (min-width : 768px) and (max-width : 1024px) {
-    
-  }
-  /* Ipad Landscape and Portrait */
-  @media only screen and (min-width:768px) and (max-width:1024px) {
+  /* Ipad Landscape */
+  @media only screen and (min-width:768px) and (max-width:1024px) and (orientation : landscape){
   
     .main-header {
       background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover border-box;
     }
+
+    * {
+      color: red;
+    }
+
     .post-title {
       margin-top: 2.5em;
     }
@@ -133,6 +112,14 @@
     .post-content {
     margin: 20px 0px 0px 50px;
     padding: 0px 50px 0px 50px; 
+    }
+
+    .home-post {
+      display: inline-flex;
+    }
+
+    .details {
+      margin-top: 1.5em;
     }
 
     .comment-add {
@@ -153,16 +140,21 @@
     }
   }
 
-  /* XS (Portrait) */
-@media only screen and (min-width:1125px) and(max-width:2436px) {
-  .post-title {
-    font-size: 2em;    /*Looks good on the phone */
-  }
+  /* Ipad Portrait */
+  /* need to fix the formatting the pages  */
+  @media only screen and (min-width:768px) and (max-width:1024px) and (orientation : portrait){
+    .main-header {
+      background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover border-box;
+    }
 
-  .post-title {
-    color: blue;
+    * {
+      color: blue;
+    }
+
+    .details {
+      display: block;
+    }
   }
-}
 
 @media only screen and (min-width:375px) and (max-width:667px) {
   /* For 6,7, & 8 in landscape */
@@ -233,16 +225,11 @@
 
     .addPost-title {
       display: block;
-      border: 4px solid blue;
-      width: 6000px;
-      padding-bottom: 20px;
-      margin: 20px 0;
-      font-size: 40px;
+      padding-bottom: 10px;
   }
   
   .addPost-body {
       display: block;
-      border: 4px solid blue;
       font-size: 25px;
       height: 400px;
       width: 320px;
@@ -252,9 +239,6 @@
       padding: 10px;
       border-radius: 8px;
       margin: 10px;
-      background: blue;
-      color: white;
-  
   }
   }
   
