@@ -6,7 +6,7 @@ const Contact = mongoose.model('contact');
 
 module.exports = app => {
     app.post('/api/contact', requireLogin, (req, res) => {
-        const { subject, body, from, to } = req.body;
+        const { subject, body, from } = req.body;
         const contact = new Contact({
             to: 'mwave317@gmail.com',
             from,

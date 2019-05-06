@@ -31,4 +31,4 @@ const postSchema = new Schema({
 });
 
 
-mongoose.model('posts', postSchema);
+mongoose.model('post', postSchema);
