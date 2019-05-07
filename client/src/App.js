@@ -33,8 +33,8 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(this.props.auth);
+    // console.log(this.state);
+    // console.log(this.props.auth);
     // let currentLocation = window.location.pathname;
       return (
         <div >
