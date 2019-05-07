@@ -4,7 +4,7 @@ const passport =require('passport');
 module.exports = app => {
 
     app.get(
-        '/auth/google', 
+        'https://mwave317.herokuapp.com/auth/google', 
         passport.authenticate('google', {
             scope: ['profile', 'email'],
         })
@@ -17,13 +17,13 @@ module.exports = app => {
         }
     );
 
-    app.get('/api/logout', (req, res) => {
+    app.get('https://mwave317.herokuapp.com/api/logout', (req, res) => {
         req.logout();
         res.redirect('/')
     });
 
     app.get(
-        '/api/current_user', (req, res) => {
+        'https://mwave317.herokuapp.com/api/current_user', (req, res) => {
             res.send(req.user);            
     });
 };
