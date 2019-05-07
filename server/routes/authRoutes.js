@@ -13,7 +13,7 @@ module.exports = app => {
     app.get(
         'https://mwave317.herokuapp.com/auth/google/callback', passport.authenticate('google'),
         (req, res) => {
-            res.redirect('/home');
+            res.redirect('https://mwave317.herokuapp.com');
         }
     );
 
