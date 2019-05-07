@@ -8,8 +8,9 @@ module.exports = app => {
     app.post('/api/contact', requireLogin, (req, res) => {
         const { subject, body, from } = req.body;
         const contact = new Contact({
-            to: 'mwave317@gmail.com',
+            to: 'mwave.blog@gmail.com',
             from,
+            bcc: 'mwave317@gmail.com',
             subject,            
             text: '' + body + '',
             html: '<p>' + body + '</p>',

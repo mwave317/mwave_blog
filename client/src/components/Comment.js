@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/Comment.css';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import axios from 'axios';
 
 class Comment extends Component {
     constructor(props){
@@ -28,8 +29,14 @@ class Comment extends Component {
         } else {
             this.setState({ [state] : ev.target.value });
             console.log(this.state);
-            this.props.onCommentSubmit(this.state);
+            this.submitComment();
         }
+    }
+
+    submitComment = () => { 
+        axios.post('/api/contact', {
+            comment: this.state.comment,
+        });
     }
 
     keyPress(ev) {

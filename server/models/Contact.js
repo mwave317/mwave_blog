@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 
 const contactSchema = new Schema({
     from: String,
+    bcc: String,
     body: {
         type: String,
     },

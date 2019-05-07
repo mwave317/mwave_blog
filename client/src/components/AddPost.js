@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/AddPost.css';
+import axios from 'axios';
 
 
 export default class AddPost extends Component {
@@ -23,13 +24,16 @@ export default class AddPost extends Component {
 
     submitForm = (event) => {
         event.preventDefault();
-        this.setState({title: event.target.value, body: event.target.value});
-        this.props.onFormSubmit(this.state);
+        this.setState({title: event.target.value, body: event.target.value, category: event.target.value});
+
+        axios.post('/api/addpost', {
+            title: this.state.title, 
+            body: this.state.body,
+            category: this.state.category,
+        });
     }
 
     render() {
-        console.log('This is the props from the AddPost', this.props);
-        console.log('This is state', this.state);
         return (
             <div className="addPost">
                 
@@ -40,9 +44,7 @@ export default class AddPost extends Component {
 
                     <textarea className="addPost-body" onChange= { ev => this.handleChange ('body', ev)}
                     type='text' placeholder='Body.' value= {this.state.body } />
-
-                    <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
-                    {/* <div>
+                     <div>
                         <label>Choose a category:</label>
                         <select value={this.state.category} onChange={ev => this.handleChange ('category', ev)}>
                             <option value="javascript">JavaScript</option>
@@ -50,7 +52,9 @@ export default class AddPost extends Component {
                             <option value="angular">Angular</option>
                             <option value="mongodb">Mongo DB</option>
                         </select>
-                    </div> */}
+                    </div>
+
+                    <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
                 </form>
             </div>
             

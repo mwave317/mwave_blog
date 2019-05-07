@@ -8,14 +8,13 @@ import * as actions from './actions';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
+import axios from 'axios';
 
 class App extends Component {
   state = {
     title: '',
     body: '',
     data: [],
-    addedTitle: ' ',
-    addedBody: ' ',
     comment: ' ',
     sender: '',
     subject: '',
@@ -27,10 +26,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchUser();
-  }
-
-  onFormSubmit(state) {
-    this.setState({ addedTitle: state.title, addedBody: state.body, sender: state.sender, subject: state.subject, contactBody: state.contactBody });
   }
 
   onCommentSubmit(state) {
@@ -48,7 +43,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav />
-                <Routes title={this.state.title} body={this.state.body} addedBody={this.state.addedBody} addedTitle={this.state.addedTitle} onFormSubmit={this.onFormSubmit.bind(this)} onCommentSubmit={this.onCommentSubmit.bind(this)} />
+                <Routes title={this.state.title} body={this.state.body} onCommentSubmit={this.onCommentSubmit.bind(this)} />
               </div>
             </div>
           </BrowserRouter>

@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const Post = mongoose.model('post');
 
 module.exports = app => {
+    app.get('/api/post/', (req, res) => {
+        res.send(res);
+    });
+
     app.post('/api/addpost', requireLogin, async (req, res) => {
         const { title, body , category, comment} = req.body;
 

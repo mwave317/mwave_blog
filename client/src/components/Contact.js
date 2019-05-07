@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Contact.css';
+import axios from 'axios';
 
 
 export default class Contact extends Component {
@@ -8,7 +9,7 @@ export default class Contact extends Component {
         this.state = {
             sender: '',
             subject: '',
-            contactBody: '',
+            body: '',
         };
     }
 
@@ -22,8 +23,13 @@ export default class Contact extends Component {
 
     submitForm = (event) => {
         event.preventDefault();
-        this.setState({sender: event.target.value, subject: event.target.value, contactBody: event.target.value});
-        this.props.onFormSubmit(this.state);
+        this.setState({sender: event.target.value, subject: event.target.value, body: event.target.value});
+        
+        axios.post('/api/contact', {
+            from: this.state.sender,
+            subject: this.state.subject,
+            body: this.state.body,
+        });
     }
 
     render() {
@@ -40,8 +46,8 @@ export default class Contact extends Component {
                         <input className="contact-subject" onChange= { ev => this.handleChange ('subject', ev)}
                         type='text' placeholder='Subject' value= {this.state.subject } />
 
-                        <textarea className="contact-body" onChange= { ev => this.handleChange ('contactBody', ev)}
-                        type='text' placeholder='Body' value= {this.state.contactBody } />
+                        <textarea className="contact-body" onChange= { ev => this.handleChange ('body', ev)}
+                        type='text' placeholder='Body' value= {this.state.body } />
 
                         <button type="submit" onClick={this.submitForm} className="contact-button">Submit</button>
                     </form>

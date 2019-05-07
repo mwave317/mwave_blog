@@ -5,13 +5,12 @@ const CommentSchema = require('./Comment');
 const postSchema = new Schema({
     title: {
         type: String,
-        required: [true,
-            'Please enter a title.']
+        required: [true]
     },
 
     body: {
         type: String,
-        required: [true, 'Plese enter a post.']
+        required: [true]
     },
 
     timestamp: {

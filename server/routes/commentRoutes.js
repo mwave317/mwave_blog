@@ -3,16 +3,17 @@ const mongoose = require('mongoose');
 const Comment = mongoose.model('comment');
 
 module.exports = app => {
+    app.get('/api/comment/', (req, res) => {
+        res.send(res);
+    });
+    
     app.post('/api/comment', requireLogin, (req, res) => {
-        const { comment, timestamp, verified } = req.body;
+        const { comment } = req.body;
 
         const addComment = new Comment ({
             comment,
-            timestamp,
-            verified,
-
+            _user: req.user.id,
         });
-        console.log('Do you see the comment', addComment);
         addComment.save();
     });
 }
