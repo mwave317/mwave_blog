@@ -5,7 +5,7 @@ const requireLogin = require('../middlewares/requireLogin');
 const Contact = mongoose.model('contact');
 
 module.exports = app => {
-    app.post('/api/contact', requireLogin, (req, res) => {
+    app.post('https://mwave317.herokuapp.com/api/contact', requireLogin, (req, res) => {
         const { subject, body, from } = req.body;
         const contact = new Contact({
             to: 'mwave.blog@gmail.com',
