@@ -11,7 +11,7 @@ module.exports = app => {
     );
     
     app.get(
-        '/auth/google/callback', passport.authenticate('google'),
+        'https://mwave317.herokuapp.com/auth/google/callback', passport.authenticate('google'),
         (req, res) => {
             res.redirect('/home');
         }
