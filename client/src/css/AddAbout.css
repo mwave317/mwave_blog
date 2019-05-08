@@ -1,0 +1,48 @@
+.addAbout {
+    display: flex;
+    justify-content: center;
+    padding-left: 8vw;
+}
+
+.addAbout-heading { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid gray;
+    width: 50vw;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.addAbout-heading:focus {
+    outline: none;
+}
+
+.addAbout-body { /* These settings look good for the 6 and the XS Max in landscape */
+    display: block;
+    border: 4px solid gray;
+    font-size: 2em;
+    height: 30vh;
+    width: 50vw;
+}
+
+.addAbout-body:focus {
+    outline: none;
+}
+
+.addAbout-button { /* These settings look good for the 6 and the XS Max in landscape */
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0px;
+    background: gray;
+    color: white;
+    outline: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+
+.addAbout-button:hover,
+.addAbout-button:active {
+    background: white;
+    color: gray;
+    outline: none;
+}

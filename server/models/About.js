@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-
-
 const { Schema } = mongoose;
 
 const aboutSchema = new Schema({
@@ -8,4 +6,10 @@ const aboutSchema = new Schema({
         type: String,
         required: true,
     },
+    _user: { 
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    },
 });
+
+mongoose.model('about', aboutSchema);

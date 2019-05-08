@@ -8,6 +8,7 @@ require('./models/User');
 require('./models/Post');
 require('./models/Contact');
 require('./services/passport');
+require('./models/About');
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true})
 .then(()=> console.log("Mongodb Connected"))
@@ -30,6 +31,7 @@ require('./routes/authRoutes')(app);
 require('./routes/postRoute')(app);
 require('./routes/contactRoutes')(app);
 require('./routes/commentRoutes')(app);
+require('./routes/aboutRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     const path = require('path');
