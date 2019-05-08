@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const CommentSchema = require('./Comment');
+// const CommentSchema = require('./Comment');
 
 const postSchema = new Schema({
     title: {
@@ -27,11 +27,11 @@ const postSchema = new Schema({
         ref: 'User',
      },
 
-    _comment: {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment',
-        body: [CommentSchema]
-     }
+    // _comment: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Comment',
+    //     body: [CommentSchema]
+    //  }
 });
 
 

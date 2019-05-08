@@ -36,7 +36,7 @@ export default class AddPost extends Component {
                 <h2 className="addAbout-title">Add About</h2>
         
                     <textarea className="addAbout-body" onChange= { ev => this.handleChange ('body', ev)}
-                    type='text' placeholder='Body.' value= {this.state.body } />
+                    type='text' placeholder='Body' value= {this.state.body } />
                    
                     <button type="submit" onClick={this.submitForm} className="addAbout-button">Submit</button>
                 </form>

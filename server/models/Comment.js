@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const ReplySchema = require('./Reply')
+// const ReplySchema = require('./Reply')
 
 const commentSchema = new Schema({
    comment: { 
     type:String,
-    required: true,
    },
    timeStamp: {
     type: Date,
@@ -23,11 +22,11 @@ const commentSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Post',
    },
-   _reply: {
-      type: Schema.Types.ObjectId,
-      ref: 'Reply',
-      body: [ReplySchema],
-   }
+   // _reply: {
+   //    type: Schema.Types.ObjectId,
+   //    ref: 'Reply',
+   //    body: [ReplySchema],
+   // }
 });
 
 mongoose.model('comment', commentSchema);

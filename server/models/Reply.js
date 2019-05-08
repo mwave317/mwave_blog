@@ -18,10 +18,10 @@ const replySchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'User',
    }, 
-   _comment: { 
-      type: Schema.Types.ObjectId,
-      ref: 'Comment',
-   },
+   // _comment: { 
+   //    type: Schema.Types.ObjectId,
+   //    ref: 'Comment',
+   // },
 });
 
 module.exports = replySchema;

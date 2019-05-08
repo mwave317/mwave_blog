@@ -7,11 +7,12 @@ module.exports = app => {
         res.send(res);
     });
     
-    app.post('/api/comment', requireLogin, (req, res) => {
-        const { comment } = req.body;
+    app.post('/api/comment/add', requireLogin, (req, res) => {
+        const { comment, _post, } = req.body;
 
         const addComment = new Comment ({
             comment,
+            _post,
             _user: req.user.id,
         });
         addComment.save();

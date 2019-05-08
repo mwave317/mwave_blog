@@ -7,8 +7,10 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./models/Post');
 require('./models/Contact');
-require('./services/passport');
+require('./models/Comment');
 require('./models/About');
+require('./services/passport');
+
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true})
 .then(()=> console.log("Mongodb Connected"))

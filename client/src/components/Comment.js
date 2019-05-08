@@ -11,7 +11,17 @@ class Comment extends Component {
                 comment: '',
                 active: false,
                 commentStatus: 'Leave a comment',
+                postId: '',
+                userId: '',
             }
+    }
+
+    componentDidMount() {
+        axios.get('/api/posts/recent')
+        .then(res => {
+            console.log(res);
+            this.setState({ postId: res.data[0]._id, userId: res.data[0]._user});
+        })
     }
 
     toggleClass = () => {
@@ -34,8 +44,10 @@ class Comment extends Component {
     }
 
     submitComment = () => { 
-        axios.post('/api/contact', {
+        axios.post('/api/comment/add', {
             comment: this.state.comment,
+            _post: this.state.postId,
+            _user: this.state.userId,
         });
     }
 
