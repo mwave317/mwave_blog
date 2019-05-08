@@ -13,7 +13,6 @@ export default class AddPost extends Component {
         }
     }
 
-
     handleChange(state, ev) {
         if (ev.target.value.includes('<script>')) {
             this.setState({title: '', body: '', category: ''})
@@ -26,7 +25,7 @@ export default class AddPost extends Component {
         event.preventDefault();
         this.setState({title: event.target.value, body: event.target.value, category: event.target.value});
 
-        axios.post('/api/addpost', {
+        axios.post('/api/posts/add', {
             title: this.state.title, 
             body: this.state.body,
             category: this.state.category,

@@ -22,6 +22,10 @@ const postSchema = new Schema({
         type: String,
         required: [true]
     },
+    _user: { 
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+     },
     _comment: {
         type: Schema.Types.ObjectId,
         ref: 'Comment',
