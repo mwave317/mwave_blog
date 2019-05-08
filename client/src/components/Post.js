@@ -16,6 +16,7 @@ export default class Post extends Component {
         componentDidMount() {
             axios.get('/api/posts/recent')
             .then(res => {
+                console.log(res);
                 this.setState({ title: res.data[0].title, body: res.data[0].body, postId: res.data[0]._id});
             })
         }

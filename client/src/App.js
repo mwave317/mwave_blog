@@ -8,7 +8,6 @@ import * as actions from './actions';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
-import axios from 'axios';
 
 class App extends Component {
   state = {

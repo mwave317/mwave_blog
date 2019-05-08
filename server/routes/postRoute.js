@@ -6,8 +6,13 @@ module.exports = app => {
 
     app.get('/api/posts/recent', async (req, res) => {
         const posts = await Post.find().sort( {$natural: -1}).limit(1);
-        console.log(posts);
-        res.send(posts);
+            res.send(posts);
+    });
+
+    app.get('/api/posts/recent/topthree', async (req, res) => {
+        const recent = await Post.find().sort( {$natural: -1}).limit(4);
+        recent.shift();
+        res.send(recent);
     })
 
     app.get('/api/posts/:postId', (req, res) => {
