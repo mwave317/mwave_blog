@@ -4,16 +4,16 @@ const passport =require('passport');
 module.exports = app => {
 
     app.get(
-        '/auth/google', 
+        'https://mwave317.herokuapp.com/auth/google', 
         passport.authenticate('google', {
             scope: ['profile', 'email'],
         })
     );
     
     app.get(
-        '/auth/google/callback', passport.authenticate('google'),
+        'https://mwave317.herokuapp.com/auth/google/callback', passport.authenticate('google'),
         (req, res) => {
-            res.redirect('/');
+            res.redirect('https://mwave317.herokuapp.com/');
         }
     );
 
@@ -23,7 +23,7 @@ module.exports = app => {
     });
 
     app.get(
-        '/api/current_user', (req, res) => {
+        'https://mwave317.herokuapp.com/api/current_user', (req, res) => {
             res.send(req.user);            
     });
 };
