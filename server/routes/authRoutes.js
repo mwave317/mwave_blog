@@ -19,7 +19,7 @@ module.exports = app => {
 
     app.get('https://mwave317.herokuapp.com/api/logout', (req, res) => {
         req.logout();
-        res.redirect('https://mwave317.herokuapp.com')
+        res.redirect('/')
     });
 
     app.get(
