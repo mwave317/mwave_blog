@@ -22,7 +22,6 @@ export default class Routes extends Component {
 
             <div>
                 <Route exact path="/" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} onCommentSubmit={this.props.onCommentSubmit} />} />
-                <Route exact path="/home" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} onCommentSubmit={this.props.onCommentSubmit} />} />
                 <Route path="/about" component={ About } />
                 <Route path="/contact" render={(props) => <Contact {...props} onFormSubmit={this.props.onFormSubmit} /> }/>
                 <Route path="/addPost" render={(props) => <AddPost {...props} addedTitle={this.props.addedTitle} addedBody={this.props.addedBody} onFormSubmit={this.props.onFormSubmit} />} />

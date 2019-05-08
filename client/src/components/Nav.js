@@ -27,7 +27,7 @@ export default class Nav extends Component {
                         <div className="nav-hamburger__line"></div>
                  </div>
                  <div className={toggleActiveState}>
-                    <Link className="nav-link" to="/home">Home</Link>
+                    <Link className="nav-link" to="/">Home</Link>
                     <Link className="nav-link" to="/about">About</Link>
                     <Link className="nav-link" to="/contact">Contact</Link>
                     <Link className="nav-link" to="/addpost">AddPost</Link>
