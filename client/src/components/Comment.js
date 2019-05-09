@@ -39,7 +39,6 @@ class Comment extends Component {
         } else {
             this.setState({ [state] : ev.target.value });
             console.log(this.state);
-            this.submitComment();
         }
     }
 
@@ -49,11 +48,13 @@ class Comment extends Component {
             _post: this.state.postId,
             _user: this.state.userId,
         });
+
+        this.setState({ comment : ''})
     }
 
     keyPress(ev) {
         if (ev.key === "Enter") {
-            this.setState({active: !this.state.active, comment: ' ', commentStatus : 'Your comment is waiting for review.'});
+            this.setState({active: !this.state.active, commentStatus : 'Your comment is waiting for review.'});
         } else {
             this.setState({active: true})
         }
@@ -65,8 +66,11 @@ class Comment extends Component {
         return (
             <div>
                   <p onClick={this.toggleClass}>{this.state.commentStatus}</p> 
-                    <textarea className={toggleActiveState} onChange= { ev => this.handleChange ('comment', ev)}
+                  <div className={toggleActiveState}>
+                    <textarea  onChange= { ev => this.handleChange ('comment', ev)}
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />
+                     <button type="submit" onClick={this.submitComment} className="addPost-button">Submit</button>
+                  </div>
             </div>
         )
     }
