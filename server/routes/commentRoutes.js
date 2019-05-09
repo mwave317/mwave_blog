@@ -4,7 +4,8 @@ const Comment = mongoose.model('comment');
 
 module.exports = app => {
     app.get('/api/comment/', (req, res) => {
-        res.send(res);
+        const comments = await Comment.find( [{$lookup: { from: "comments", localField: _id}}]);
+        res.send(comments);
     });
     
     app.post('/api/comment/add', requireLogin, (req, res) => {

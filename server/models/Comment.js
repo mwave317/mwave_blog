@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-// const ReplySchema = require('./Reply')
 
 const commentSchema = new Schema({
    comment: { 
@@ -22,11 +21,6 @@ const commentSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Post',
    },
-   // _reply: {
-   //    type: Schema.Types.ObjectId,
-   //    ref: 'Reply',
-   //    body: [ReplySchema],
-   // }
 });
 
 mongoose.model('comment', commentSchema);
