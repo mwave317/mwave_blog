@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Comment = mongoose.model('comment');
 
 module.exports = app => {
-    app.get('/api/comment/', (req, res) => {
+    app.get('/api/comment/', async (req, res) => {
         const comments = await Comment.find( [{$lookup: { from: "comments", localField: _id}}]);
         res.send(comments);
     });
