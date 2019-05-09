@@ -8,14 +8,6 @@ module.exports = app => {
         res.send(comments);
     });
 
-    app.patch('/api/comment/update', async (req, res) => {
-        
-        commentId = req.body.commentId;
-        console.log(req.body.commentId, req.body.verfied);
-        const comments = await Comment.updateOne( {_id : commentId}, { $set: { verified: true}});
-        res.send(comments);
-    });
-    
     app.post('/api/comment/add', requireLogin, (req, res) => {
         const { comment, _post, } = req.body;
 
@@ -25,5 +17,16 @@ module.exports = app => {
             _user: req.user.id,
         });
         addComment.save();
+    });
+
+    app.patch('/api/comment/verified/update', async (req, res) => { 
+        const updateAComment = await Comment.updateOne( {_id : req.body.commentId}, { $set: { verified: req.body.verified}});
+        res.send(updateAComment);
+    });
+
+    app.delete('/api/comment/verified/delete', async (req, res) => { 
+        console.log(req.body.commentId);
+        const deleteAComment = await Comment.deleteOne( {_id : req.body.commentId});
+        res.send(deleteAComment);
     });
 }

@@ -23,17 +23,25 @@ export default class ComponentReview extends Component {
     }
 
     acceptComment() {
-        let commentId = '5cd4342218aa130206ed7087';
-        axios.patch('/api/comment/update', {
+        let commentId = '5cd4351718aa130206ed7088';
+        axios.patch('/api/comment/verified/update', {
             commentId,
-            verfied: true,
+            verified: false,
         })
+    }
+
+    deleteComment() {
+        let commentId = '5cd4342218aa130206ed7087';
+        axios.delete('/api/comment/verified/delete', {
+            data: {commentId,
+        }}); 
     }
 
     render() {
         return(
             <div>
-                <p onClick={this.acceptComment}>Need to build this.</p>
+                <p onClick={this.acceptComment}>Update Comment.</p>
+                <p onClick={this.deleteComment}>Delete Comment.</p>
             </div>
         )
     }
