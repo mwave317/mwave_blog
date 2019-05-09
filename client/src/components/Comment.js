@@ -21,6 +21,11 @@ class Comment extends Component {
         .then(res => {
             console.log(res);
             this.setState({ postId: res.data[0]._id, userId: res.data[0]._user});
+        });
+
+        axios.get('/api/comment/verified')
+        .then(res => {
+            console.log(res.data);
         })
     }
 

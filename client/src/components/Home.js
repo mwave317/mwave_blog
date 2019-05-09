@@ -3,6 +3,7 @@ import '../css/Home.css';
 import '../css/Media.css';
 import Post from './Post';
 import Details from './Details';
+import CommentReview from './CommentReview';
 
 export default class Home extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ export default class Home extends Component {
                         </div>
                             
                     </div> 
-                    
+                    <CommentReview />
                 </div>
             )  
     }
