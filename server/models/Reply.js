@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
+
 const replySchema = new Schema({
    reply: { 
     type:String,
@@ -14,6 +15,10 @@ const replySchema = new Schema({
     type: Boolean,
     default: false,
    },
+   firstName: {
+      type: String,
+   },
+
    _user: { 
       type: Schema.Types.ObjectId,
       ref: 'User',
@@ -28,4 +33,4 @@ const replySchema = new Schema({
    },
 });
 
-module.exports = replySchema;
+mongoose.model('reply', replySchema);

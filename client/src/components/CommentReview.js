@@ -5,7 +5,7 @@ export default class ComponentReview extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            commentsForReview: {},
+            commentsForReview: [],
             firstComment: '',
             secondComment: '',
             thirdComment: '',
@@ -18,7 +18,7 @@ export default class ComponentReview extends Component {
         .then(res => {
             console.log(res.data);
             this.setState({ commentsForReview: res.data});
-            console.log('These are the comments for review', this.state.commentsForReview[0]._id);
+            console.log('These are the comments for review', this.state.commentsForReview);
         })
     }
 
@@ -38,10 +38,11 @@ export default class ComponentReview extends Component {
     }
 
     render() {
+        let commentsWhichNeedToBeVerified = this.state.commentsForReview;
+        let displayComments = commentsWhichNeedToBeVerified.map((comment, index) => <div><p key={index}>{comment.comment} - {comment.firstName}</p> <button onClick={this.acceptComment}>Update Comment</button> <button onClick={this.deleteComment}>Delete Comment</button></div>);
         return(
             <div>
-                <p onClick={this.acceptComment}>Update Comment.</p>
-                <p onClick={this.deleteComment}>Delete Comment.</p>
+                {displayComments}
             </div>
         )
     }

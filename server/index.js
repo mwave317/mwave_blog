@@ -9,6 +9,7 @@ require('./models/Post');
 require('./models/Contact');
 require('./models/Comment');
 require('./models/About');
+require('./models/Reply');
 require('./services/passport');
 
 
@@ -33,7 +34,8 @@ require('./routes/authRoutes')(app);
 require('./routes/postRoute')(app);
 require('./routes/contactRoutes')(app);
 require('./routes/commentRoutes')(app);
-require('./routes/aboutRoutes')(app);
+require('./routes/replyRoutes')(app);
+
 
 if (process.env.NODE_ENV === 'production') {
     const path = require('path');

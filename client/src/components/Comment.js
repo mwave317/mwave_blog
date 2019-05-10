@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Comment.css';
 import { connect } from 'react-redux';
+import Reply from './Reply';
 import * as actions from '../actions';
 import axios from 'axios';
 
@@ -13,20 +14,15 @@ class Comment extends Component {
                 commentStatus: 'Leave a comment',
                 postId: '',
                 userId: '',
+                firstName: '',
             }
     }
 
     componentDidMount() {
         axios.get('/api/posts/recent')
         .then(res => {
-            console.log(res);
-            this.setState({ postId: res.data[0]._id, userId: res.data[0]._user});
+            this.setState({ postId: res.data[0]._id, userId: res.data[0]._user, firstName: this.props.auth.firstName});
         });
-
-        axios.get('/api/comment/verified')
-        .then(res => {
-            console.log(res.data);
-        })
     }
 
     toggleClass = () => {
@@ -43,7 +39,6 @@ class Comment extends Component {
             this.setState({comment: ''})
         } else {
             this.setState({ [state] : ev.target.value });
-            console.log(this.state);
         }
     }
 
@@ -52,6 +47,7 @@ class Comment extends Component {
             comment: this.state.comment,
             _post: this.state.postId,
             _user: this.state.userId,
+            firstName: this.state.firstName,
         });
 
         this.setState({ comment : ''})
@@ -66,7 +62,6 @@ class Comment extends Component {
     }
 
     render() {
-        // console.log(this.props.auth);
         const toggleActiveState = this.state.active ? 'comment-add' : 'hide'; 
         return (
             <div>
@@ -76,6 +71,8 @@ class Comment extends Component {
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />
                      <button type="submit" onClick={this.submitComment} className="addPost-button">Submit</button>
                   </div>
+
+                  <Reply />
             </div>
         )
     }
