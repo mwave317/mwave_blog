@@ -93,6 +93,7 @@
     }
   }
   /* XS Max Landscape */
+  /* This is done depending on how I fix the timestamp */
   @media only screen and (min-width:768px) and (max-width:1000px) and (orientation : landscape){
   
     .main-header {
@@ -104,20 +105,22 @@
     }
 
     .post-title {
-      margin-top: 2.5em;
+      margin-top: 1em;
+      font-size: 1.25em;
     }
 
     .post-content {
-    margin: 20px 0px 0px 50px;
-    padding: 0px 50px 0px 50px; 
+      width: 500px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 20px 0px 10px; 
     }
 
     .home-post {
       display: inline-flex;
     }
 
-    .details {
-      margin-top: 1.5em;
+    .home-details {
+      margin-left: 0px;
     }
 
     .comment-add {
@@ -127,14 +130,26 @@
     .about {
       padding-left: 55px;
   }
+    .about-title {
+      margin-top: 2.5em;
+    }
 
     .contact-title {
-      font-size: 1em;
-      margin-top: 2.5em;
+      font-size: 1.5em;
+      margin-top: 1.5em;
     }
 
     .portfolio-title {
       margin-top: 2.5em;
+    }
+
+    .addPost-title {
+      font-size: 1.5em;
+      margin-top: 6em;
+    }
+
+    .addAbout-title {
+      margin-top: 1.5em;
     }
   }
 
@@ -220,6 +235,7 @@
    }
   }
 /* the XS max in portrait  */
+/* This is done, except I may need to change the size of the comment box once uploaded to heroku */
 @media only screen and (max-width:425px) {
   
 
@@ -255,7 +271,7 @@
   .post-title {
   font-weight: bold;
   font-size: 1em;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
   margin-bottom: .20em;  
   }
 
@@ -265,7 +281,7 @@
   }
 
   .contact-title {
-    margin-top: 2.5em;
+    margin-top: 1em;
     font-size: 1em;
   }
 
