@@ -67,12 +67,12 @@ class Comment extends Component {
             <div>
                   <p onClick={this.toggleClass}>{this.state.commentStatus}</p> 
                   <div className={toggleActiveState}>
-                    <textarea  className="comment-add" onChange= { ev => this.handleChange ('comment', ev)}
+                    <textarea  className="comment-body" onChange= { ev => this.handleChange ('comment', ev)}
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />
-                     <button type="submit" onClick={this.submitComment} className="addPost-button">Submit</button>
+                     <button type="submit" onClick={this.submitComment} className="comment-button">Submit</button>
                   </div>
 
-                  <Reply />
+                  {/* <Reply /> */}
             </div>
         )
     }

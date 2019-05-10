@@ -4,3 +4,21 @@
     font-size: 18px;
     outline: none;
 }
+
+.comment-button { /* These settings look good for the 6 and the XS Max in landscape */
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0px;
+    background: gray;
+    color: white;
+    outline: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+
+.comment-button:hover,
+.comment-button:active {
+    background: white;
+    color: gray;
+    outline: none;
+}

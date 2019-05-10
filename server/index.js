@@ -32,6 +32,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/postRoute')(app);
+require('./routes/aboutRoutes')(app);
 require('./routes/contactRoutes')(app);
 require('./routes/commentRoutes')(app);
 require('./routes/replyRoutes')(app);
