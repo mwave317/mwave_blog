@@ -88,8 +88,47 @@
 
   /* Ipad Landscape Only */
   @media only screen and (min-width:768px) and (max-width:1024px) and (orientation : landscape){
-    * {
-      color: gray;
+    .post-title {
+      margin-top: 1.95em;
+      font-size: 1.25em;
+    }
+
+    .post-content {
+      width: 800px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 20px 0px 10px; 
+    }
+    .about {
+      padding-left: 55px;
+      padding-bottom: 30px;
+    }
+
+    .about-title {
+      margin-top: 2.5em;
+    }
+
+    .about-body {
+      width: 775px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 100px 0px 60px; 
+    }
+
+    .contact {
+      padding-top: 1.75em;
+    }
+ 
+    .contact-title {
+      font-size: 1.25em;
+    }
+ 
+    .addPost-title {
+     padding-top: .75em;
+     font-size: 1.25em;
+    }
+ 
+    .addAbout-title {
+     padding-top: 1.15em;
+     font-size: 1.25em;
     }
   }
   /* XS Max Landscape */
@@ -98,10 +137,6 @@
   
     .main-header {
       background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover border-box;
-    }
-
-    * {
-      color: red;
     }
 
     .post-title {
@@ -129,7 +164,7 @@
 
     .about {
       padding-left: 55px;
-  }
+    }
     .about-title {
       margin-top: 2.5em;
     }
@@ -159,19 +194,103 @@
       background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover border-box;
     }
 
-    * {
-      color: blue;
+    .post-title {
+      margin-top: 1.95em;
+      font-size: 1.25em;
+    }
+
+    .post-content {
+      width: 600px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 60px 0px 10px; 
+    }
+
+    .about {
+      padding-bottom: 30px;
+    }
+
+    .about-title {
+      margin-top: 1.95em;
+      font-size: 1.25em;
+    }
+
+    .about-body {
+      width: 575px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 100px 0px 60px; 
     }
 
     .details {
       display: block;
     }
+
+    .contact {
+      padding-top: 1.75em;
+    }
+ 
+    .contact-title {
+      font-size: 1.25em;
+    }
+ 
+    .addPost-title {
+     padding-top: .75em;
+     font-size: 1.25em;
+    }
+ 
+    .addAbout-title {
+     padding-top: 1.15em;
+     font-size: 1.25em;
+    }
   }
 
     /* For the 6, 7, 8 Plus in Landscape */
   @media only screen and (max-width:750px) {
-    * {
-      color: purple;
+    .post-title {
+      margin-top: 1.95em;
+      font-size: 1.25em;
+    }
+
+    .post-content {
+      width: 600px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 60px 0px 10px; 
+    }
+
+    .about {
+      padding-bottom: 30px;
+    }
+
+    .about-title {
+      margin-top: 1.95em;
+      font-size: 1.25em;
+    }
+
+    .about-body {
+      width: 575px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 100px 0px 60px; 
+    }
+
+    .details {
+      display: block;
+    }
+
+    .contact {
+      padding-top: 1.75em;
+    }
+ 
+    .contact-title {
+      font-size: 1.25em;
+    }
+ 
+    .addPost-title {
+     padding-top: .75em;
+     font-size: 1.25em;
+    }
+ 
+    .addAbout-title {
+     padding-top: 1.15em;
+     font-size: 1.25em;
     }
 
   }
@@ -180,9 +299,6 @@
 
   /* Still need to fix the select for the category otherwise it's done */
   @media only screen and (max-width:667px) {
-   * {
-     color: brown;
-   }
 
    /* Need to make a smaller resolution picture and move the comment button up */
    .main-header {
@@ -249,7 +365,6 @@
 
   .main-layout {
     display: inline-flex;
-    /* padding-right: 60px; */
     background-color: white;
   }
 
@@ -262,6 +377,7 @@
   }
 
   .post-content {
+    width: 300px;
     margin: 20px 30px 0px 10px;
     padding: 0px 20px 0px 25px; 
     /* Need to change the left padding for smaller screens */
@@ -274,10 +390,16 @@
   margin-top: 1.5em;
   margin-bottom: .20em;  
   }
-
+  .about {
+    padding-bottom: 30px;
+  }
   .about-title {
     margin-top: 1.5em;
     font-size: 1em;
+  }
+
+  .about-body {
+    width: 280px;
   }
 
   .contact-title {
@@ -295,11 +417,6 @@
   /* Phone 6, 7, 8 in portrait */
   /* This is done  */
   @media only screen and (min-width:321px) and (max-width:375px) {
-
-    * {
-      color: skyblue;
-    }
-  
     .main-header {
       background: url("../images/trees_436hx581w.jpg") 0% 50%/cover no-repeat border-box;
     }
@@ -353,9 +470,6 @@
   
   /* Phone (Portrait) works with the 5s for portrait only*/
   @media only screen and (max-width:320px) {
-    * {
-      color: yellow;
-    }
     .main-header {
       background: url("../images/trees_240h_x320w.jpg") 0% 50%/cover no-repeat border-box;
       padding-left: 5px;
@@ -373,17 +487,28 @@
     }
 
     .post-content {
-      margin: 20px 30px 0px 10px;
-      padding: 0px 20px 0px 25px; 
-      /* Need to change the left padding for smaller screens */
+      width: 300px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 60px 0px 10px; 
       white-space: pre-line;
     }
 
+    .about {
+      padding-bottom: 30px;
+    }
+
+    .about-body {
+      width: 200px;
+      margin: 20px 0px 0px 0px;
+      padding: 0px 100px 0px 60px; 
+    }
+  
     .post-title {
     font-weight: bold;
     font-size: 1em;
     margin-top: 2.5em;
     margin-bottom: .20em;  
     }
-}
+  }
+
   
