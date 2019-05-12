@@ -299,7 +299,7 @@
 
   /* Still need to fix the select for the category otherwise it's done */
   @media only screen and (max-width:667px) {
-
+    
    /* Need to make a smaller resolution picture and move the comment button up */
    .main-header {
     background: url("../images/trees_768hx1024w.jpg") 10% 35%/cover border-box;
@@ -307,9 +307,6 @@
 
    .post-content {
      padding-left: 20px;
-   }
-   .post-title {
-     padding-top: 1em;
    }
 
    .post-line {

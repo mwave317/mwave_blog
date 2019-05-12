@@ -5,9 +5,9 @@ const commentSchema = new Schema({
    comment: { 
     type:String,
    },
-   timeStamp: {
-    type: Date,
-    default: Date.now(),
+   timestamp: {
+     type: String,
+     required: [true]
    },
    verified: {
     type: Boolean,

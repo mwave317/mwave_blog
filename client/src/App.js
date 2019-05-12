@@ -21,19 +21,30 @@ class App extends Component {
     intervalisSet: false,
     reviewed: true,
     loggedIn: true,
+    date: '',
   }
 
   componentDidMount() {
     this.props.fetchUser();
+    this.formatDate();
   }
 
   onCommentSubmit(state) {
     this.setState({ comment: state.comment, reviewed: state.reviewed });
   }
 
+  formatDate() {
+    let date = new Date();
+    let dateString = date.toDateString();
+    let formattedDate = dateString.split(' ').splice(1).join(' ');
+
+    this.setState({ date: formattedDate});
+}
+
   render() {
+    console.log(this.state.date);
     // console.log(this.state);
-    console.log(this.props.auth);
+    // console.log(this.props.auth);
     // let currentLocation = window.location.pathname;
       return (
         <div >
@@ -42,7 +53,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav />
-                <Routes title={this.state.title} body={this.state.body} onCommentSubmit={this.onCommentSubmit.bind(this)} />
+                <Routes title={this.state.title} body={this.state.body} date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} />
               </div>
             </div>
           </BrowserRouter>

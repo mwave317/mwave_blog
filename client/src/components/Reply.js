@@ -9,8 +9,8 @@ class Reply extends Component {
             this.state = {
                 reply: '',
                 firstName: '',
-                _comment : '5cd47b688ead070ccf57de98',
-                _post : '5cd40d103651bf0417046e28',
+                _comment : '5cd797f2a5e47228874ed26c',
+                _post : '5cd793573fadb2277a443287',
                 _user : '5cd1d33ff90369044bb357c0',
             }
     }
@@ -20,7 +20,6 @@ class Reply extends Component {
         if (ev.target.value.includes('<script>')) {
             this.setState({reply: ''})
         } else {
-            this.setState({ firstName: this.props.auth.firstname })
             this.setState({ [state] : ev.target.value});
         }
     }
@@ -28,7 +27,8 @@ class Reply extends Component {
     submitReply = () => { 
         axios.post('/api/reply/add', {
             reply: this.state.reply,
-            firstName: this.state.firstName,
+            firstName: this.props.auth.firstName,
+            timestamp: this.props.date,
             _user: this.state._user,
             _post: this.state._post,
             _comment: this.state._comment,
@@ -38,6 +38,7 @@ class Reply extends Component {
     };
 
     render() {
+        console.log(this.state.firstName)
         return(
             <div>
                   <div>

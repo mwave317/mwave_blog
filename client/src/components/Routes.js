@@ -16,15 +16,14 @@ export default class Routes extends Component {
     }
  
     render() {
-        // console.log(this.props);
-        // console.log(this.state.path);
+        console.log(this.props);
         return (
 
             <div>
-                <Route exact path="/" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} onCommentSubmit={this.props.onCommentSubmit} />} />
+                <Route exact path="/" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} date={this.props.date} onCommentSubmit={this.props.onCommentSubmit} />} />
                 <Route path="/about" component={ About } />
                 <Route path="/contact" render={(props) => <Contact {...props} onFormSubmit={this.props.onFormSubmit} /> }/>
-                <Route path="/addpost" render={(props) => <AddPost {...props} addedTitle={this.props.addedTitle} addedBody={this.props.addedBody} onFormSubmit={this.props.onFormSubmit} />} />
+                <Route path="/addpost" render={(props) => <AddPost {...props} addedTitle={this.props.addedTitle} addedBody={this.props.addedBody} date={this.props.date} onFormSubmit={this.props.onFormSubmit} />} />
                 <Route path="/addabout" render={(props) => <AddAbout {...props} onFormSubmit={this.props.onFormSubmit} />} />
             </div>
         )

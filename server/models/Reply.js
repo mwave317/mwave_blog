@@ -7,9 +7,9 @@ const replySchema = new Schema({
     type:String,
     required: true,
    },
-   timeStamp: {
-    type: Date,
-    default: Date.now(),
+   timestamp: {
+    type: String,
+    required: [true]
    },
    reviewed: {
     type: Boolean,

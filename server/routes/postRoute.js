@@ -20,12 +20,14 @@ module.exports = app => {
     });
 
     app.post('/api/posts/add', requireLogin, async (req, res) => {
-        const { title, body , category } = req.body;
+        const { title, body , category, timestamp } = req.body;
+        console.log(req.body);
 
         const post = new Post({
             title,
             body, 
             category,
+            timestamp,
             _user: req.user.id,
         })
         await post.save();

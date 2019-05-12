@@ -18,14 +18,13 @@ export default class Home extends Component {
                 <div>
                     <div className="name">
                         <div className="home-post">
-                            <Post title={this.props.title} body={this.props.body} />
+                            <Post title={this.props.title} body={this.props.body} date={this.props.date} />
                                 <div className="home-details"> 
-                                   <Details onCommentSubmit={this.props.onCommentSubmit } />
+                                   <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } />
                                 </div> 
                         </div>
                             
                     </div> 
-                    {/* <CommentReview /> */}
                 </div>
             )  
     }

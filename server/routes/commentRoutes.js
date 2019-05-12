@@ -10,12 +10,13 @@ module.exports = app => {
 
     app.post('/api/comment/add', requireLogin, (req, res) => {
         console.log(req.body);
-        const { comment, _post, firstName } = req.body;
+        const { comment, _post, firstName , timestamp} = req.body;
 
         const addComment = new Comment ({
             comment,
             firstName,
             _post,
+            timestamp,
             _user: req.user.id,
             
         });

@@ -10,6 +10,7 @@ export default class AddPost extends Component {
             title: '',
             body: '',
             category: '',
+            date: '',
         }
     }
 
@@ -29,10 +30,14 @@ export default class AddPost extends Component {
             title: this.state.title, 
             body: this.state.body,
             category: this.state.category,
+            timestamp: this.props.date,
         });
     }
 
+
+
     render() {
+        console.log('This is from the addPost', this.props);
         return (
             <div className="addPost">
                 

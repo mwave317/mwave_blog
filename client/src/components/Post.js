@@ -22,6 +22,7 @@ export default class Post extends Component {
         }
 
         render() {
+            console.log(this.props.auth);
             return (
             <div className="post-content">
                     <h4 className="post-title">{this.state.title}</h4>

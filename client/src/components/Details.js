@@ -15,9 +15,9 @@ export default class Details extends Component {
     render() {
         return (
             <div className="details">
-                <p><span className="details-posted">Posted on </span>February 14, 2018</p>
+                <p><span className="details-posted">Posted on </span>{this.props.date}</p>
                 <p><span className="details-posted">Posted in </span>JavaScript - functions</p>
-                <Comment onCommentSubmit={this.props.onCommentSubmit} />
+                <Comment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} />
                 <Archives />
                 <Recent />
             </div>

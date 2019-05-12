@@ -13,8 +13,8 @@ const postSchema = new Schema({
     },
 
     timestamp: {
-        type: Date,
-        default: Date.now(),
+        type: String,
+        required: [true]
     }, 
 
     category: {

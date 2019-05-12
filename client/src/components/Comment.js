@@ -12,8 +12,8 @@ class Comment extends Component {
                 comment: '',
                 active: false,
                 commentStatus: 'Leave a comment',
-                postId: '',
-                userId: '',
+                postId: '5cd793573fadb2277a443287',
+                userId: '5cd1d33ff90369044bb357c0',
                 firstName: '',
             }
     }
@@ -47,6 +47,7 @@ class Comment extends Component {
             comment: this.state.comment,
             _post: this.state.postId,
             _user: this.state.userId,
+            timestamp: this.props.date,
             firstName: this.state.firstName,
         });
 
@@ -72,7 +73,7 @@ class Comment extends Component {
                      <button type="submit" onClick={this.submitComment} className="comment-button">Submit</button>
                   </div>
 
-                  {/* <Reply /> */}
+                  <Reply date={this.props.date} />
             </div>
         )
     }
