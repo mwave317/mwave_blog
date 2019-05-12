@@ -28,7 +28,7 @@ class Reply extends Component {
         axios.post('/api/reply/add', {
             reply: this.state.reply,
             firstName: this.props.auth.firstName,
-            timestamp: this.props.date,
+            // timestamp: this.props.date,
             _user: this.state._user,
             _post: this.state._post,
             _comment: this.state._comment,

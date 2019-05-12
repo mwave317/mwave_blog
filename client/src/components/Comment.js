@@ -73,7 +73,7 @@ class Comment extends Component {
                      <button type="submit" onClick={this.submitComment} className="comment-button">Submit</button>
                   </div>
 
-                  <Reply date={this.props.date} />
+                  {/* <Reply date={this.props.date} /> */}
             </div>
         )
     }
