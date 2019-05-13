@@ -23,7 +23,7 @@ export default class Recent extends Component {
         axios.get('/api/posts/recent/topthree')
         .then(res => {
             this.setState({ posts: res.data, firstRecentPostTitle : res.data[0].title, firstRecentPostDate: res.data[0].timestamp, secondRecentPostTitle : res.data[1].title, secondRecentPostDate: res.data[1].timestamp, thirdRecentPostTitle : res.data[2].title, thirdRecentPostDate: res.data[2].timestamp });
-            console.log(this.state.posts);
+            // console.log(this.state.posts);
 
         })
     }

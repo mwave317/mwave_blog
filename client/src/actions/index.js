@@ -8,5 +8,6 @@ export const fetchUser = () => async dispatch => {
 
 export const fetchRecentPost = () => async dispatch => {
     const res = await axios.get('/api/posts/recent');
+    console.log('Thisis the res object', res.data);
         dispatch({ type: FETCH_RECENT_POST, payload: res.data });
  };

@@ -19,10 +19,12 @@ class Comment extends Component {
     }
 
     componentDidMount() {
+        if (this.props !== null) {
         axios.get('/api/posts/recent')
         .then(res => {
             this.setState({ postId: res.data[0]._id, userId: res.data[0]._user, firstName: this.props.auth.firstName});
         });
+    }
     }
 
     toggleClass = () => {
@@ -63,6 +65,7 @@ class Comment extends Component {
     }
 
     render() {
+        console.log(this.props.auth);
         const toggleActiveState = this.state.active ? 'comment-add' : 'hide'; 
         return (
             <div>
