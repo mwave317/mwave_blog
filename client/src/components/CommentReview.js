@@ -14,8 +14,8 @@ class ComponentReview extends Component {
             return (
                 <div key={comment._id}>
                  <p>{comment.comment} - {comment.firstName}</p>
-                 <button value={comment._id}  onClick={this.acceptComment}>Update Comment</button> 
-                 <button value={comment._id}  onClick={this.deleteComment}>Delete Comment</button>
+                 <button value={comment._id} type="submit"  onClick={this.acceptComment}>Update Comment</button> 
+                 <button value={comment._id}  type="submit" onClick={this.deleteComment}>Delete Comment</button>
                 </div>
             ) 
         });

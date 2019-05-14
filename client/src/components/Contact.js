@@ -15,7 +15,7 @@ export default class Contact extends Component {
 
     handleChange(state, event) {
         if (event.target.value.includes('<script>')) {
-            this.setState({sender: '', subject: '', contactBody: ''})
+            this.setState({sender: '', subject: '', body: ''})
         } else {
             this.setState({ [state] : event.target.value});
         }

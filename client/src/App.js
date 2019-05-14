@@ -11,16 +11,6 @@ import Nav from './components/Nav';
 
 class App extends Component {
   state = {
-    title: '',
-    body: '',
-    data: [],
-    comment: ' ',
-    sender: '',
-    subject: '',
-    contactBody: '',
-    intervalisSet: false,
-    reviewed: true,
-    loggedIn: true,
     date: '',
   }
 
@@ -50,7 +40,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav />
-                <Routes title={this.state.title} body={this.state.body} date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} />
+                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} />
               </div>
             </div>
           </BrowserRouter>

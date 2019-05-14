@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import '../css/AddAbout.css';
 import axios from 'axios';
 
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class AddPost extends Component {
+
+class AddAbout extends Component {
     constructor(props) {
         super(props);
         this.state = {
             body: '',
         }
+    }
+
+    componentDidMount() {
+        this.props.fetchAbout();
     }
 
     handleChange(state, ev) {
@@ -19,13 +26,23 @@ export default class AddPost extends Component {
         }
     }
 
+    updateAbout() {
+        axios.patch('/api/about/update', {
+            aboutId: this.props.about[0]._id,
+            body: this.state.body,
+        })
+    }
+
     submitForm = (event) => {
         event.preventDefault();
         this.setState({body: event.target.value});
-
-        axios.post('/api/about/add', {
-            body: this.state.body,
-        });
+        if(this.props.about.length > 0) {
+         this.updateAbout();
+        } else {
+            axios.post('/api/about/add', {
+                body: this.state.body,
+            });
+        }  
     }
 
     render() {
@@ -45,3 +62,10 @@ export default class AddPost extends Component {
         );
     }
 }
+
+function mapStateToProps({ about }) {
+    return { about };
+  }
+  
+  export default connect(mapStateToProps, actions)(AddAbout);
+

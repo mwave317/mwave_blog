@@ -37,7 +37,6 @@ export default class AddPost extends Component {
 
 
     render() {
-        console.log('This is from the addPost', this.props);
         return (
             <div className="addPost">
                 

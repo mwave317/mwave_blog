@@ -11,11 +11,16 @@ module.exports = app => {
 
     app.post('/api/about/add', requireLogin, async (req, res) => {
         const { body } = req.body;
-
+        
         const about = new About({
             body, 
             _user: req.user.id,
         });
         await about.save();
-    }); 
+    });
+    
+    app.patch('/api/about/update', async (req, res) => { 
+        const updateAbout = await About.updateOne( {_id : req.body.aboutId}, { $set: { body: req.body.body}});
+        res.send(updateAbout);
+    });
 }
