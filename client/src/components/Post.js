@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import '../css/Post.css';
 import '../css/Media.css';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
 import { fetchRecentPost } from '../actions';
 
 class Post extends Component {
-    constructor(props) {
-        super(props);
-        }
 
         componentDidMount() {
             this.props.fetchRecentPost();

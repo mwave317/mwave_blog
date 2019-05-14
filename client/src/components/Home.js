@@ -23,7 +23,7 @@ export default class Home extends Component {
                                    <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } />
                                 </div> 
                         </div>
-                            
+                           <CommentReview/> 
                     </div> 
                 </div>
             )  

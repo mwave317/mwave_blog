@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
+import { fetchCommentsNeedingReview } from '../actions';
 
-export default class ComponentReview extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            commentsForReview: [],
-            firstComment: '',
-            secondComment: '',
-            thirdComment: '',
-
-        }
-    }
+class ComponentReview extends Component {
 
     componentDidMount() {
-        axios.get('/api/comment/not_verified')
-        .then(res => {
-            console.log(res.data);
-            this.setState({ commentsForReview: res.data});
-            console.log('These are the comments for review', this.state.commentsForReview);
-        })
+      this.props.fetchCommentsNeedingReview();
+    }
+
+    commentsNeedingReview() {
+        return this.props.review.map(comment => {
+            return (
+                <div key={comment._id}>
+                     <p>{comment.comment} - {comment.firstName}</p>
+                     <button onClick={this.acceptComment}>Update Comment</button> 
+                     <button onClick={this.deleteComment}>Delete Comment</button>
+                </div>
+            ) 
+        });
     }
 
     acceptComment() {
@@ -38,12 +37,16 @@ export default class ComponentReview extends Component {
     }
 
     render() {
-        let commentsWhichNeedToBeVerified = this.state.commentsForReview;
-        let displayComments = commentsWhichNeedToBeVerified.map((comment, index) => <div><p key={index}>{comment.comment} - {comment.firstName}</p> <button onClick={this.acceptComment}>Update Comment</button> <button onClick={this.deleteComment}>Delete Comment</button></div>);
         return(
             <div>
-                {displayComments}
+                {this.commentsNeedingReview()}
             </div>
         )
     }
 }
+
+function mapStateToProps({ review}) {
+    return { review };
+  }
+  
+  export default connect(mapStateToProps, { fetchCommentsNeedingReview })(ComponentReview);

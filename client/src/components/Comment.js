@@ -18,15 +18,6 @@ class Comment extends Component {
             }
     }
 
-    componentDidMount() {
-        if (this.props !== null) {
-        axios.get('/api/posts/recent')
-        .then(res => {
-            this.setState({ postId: res.data[0]._id, userId: res.data[0]._user, firstName: this.props.auth.firstName});
-        });
-    }
-    }
-
     toggleClass = () => {
         if (this.props.auth) {
             this.setState({active: !this.state.active});
