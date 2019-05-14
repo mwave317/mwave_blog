@@ -24,7 +24,6 @@ module.exports = app => {
     });
 
     app.patch('/api/comment/verified/update', async (req, res) => { 
-        console.log(req.body.commentId);
         const updateAComment = await Comment.updateOne( {_id : req.body.commentId}, { $set: { verified: req.body.verified}});
         res.send(updateAComment);
     });

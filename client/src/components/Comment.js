@@ -41,7 +41,7 @@ class Comment extends Component {
             _post: this.state.postId,
             _user: this.state.userId,
             timestamp: this.props.date,
-            firstName: this.state.firstName,
+            firstName: this.props.auth.firstName,
         });
 
         this.setState({ comment : ''})
