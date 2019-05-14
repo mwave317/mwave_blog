@@ -56,7 +56,6 @@ class Comment extends Component {
     }
 
     render() {
-        console.log(this.props.auth);
         const toggleActiveState = this.state.active ? 'comment-add' : 'hide'; 
         return (
             <div>

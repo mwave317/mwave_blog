@@ -42,9 +42,6 @@ class App extends Component {
 }
 
   render() {
-    // console.log(this.state.date);
-    // console.log(this.state);
-    // console.log(this.props);
     // let currentLocation = window.location.pathname;
       return (
         <div >
@@ -64,7 +61,6 @@ class App extends Component {
 
 
 function mapStateToProps({ auth, recent}) {
-  console.log(recent);
   return { auth, recent };
 }
 

@@ -3,7 +3,7 @@ import '../css/Home.css';
 import '../css/Media.css';
 import Post from './Post';
 import Details from './Details';
-// import CommentReview from './CommentReview';
+import CommentReview from './CommentReview';
 
 export default class Home extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ export default class Home extends Component {
                                    <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } />
                                 </div> 
                         </div>
-                           {/* <CommentReview/>  */}
+                           <CommentReview/> 
                     </div> 
                 </div>
             )  
