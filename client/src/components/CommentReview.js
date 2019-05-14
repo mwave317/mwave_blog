@@ -14,27 +14,23 @@ class ComponentReview extends Component {
             return (
                 <div key={comment._id}>
                  <p>{comment.comment} - {comment.firstName}</p>
-                 <button value={comment._id} onClick={this.acceptComment}>Update Comment</button> 
-                 <button value={comment._id} onClick={this.deleteComment}>Delete Comment</button>
+                 <button value={comment._id}  onClick={this.acceptComment}>Update Comment</button> 
+                 <button value={comment._id}  onClick={this.deleteComment}>Delete Comment</button>
                 </div>
             ) 
         });
     }
 
     acceptComment(event) {
-        let commentId = event.target.value;
-        console.log(commentId);
         axios.patch('/api/comment/verified/update', {
-            commentId,
+            commentId: event.target.value,
             verified: true,
         })
     }
 
     deleteComment(event) {
-        let commentId = event.target.value;
-        console.log(commentId);
         axios.delete('/api/comment/verified/delete', {
-            commentId,
+            data: {commentId: event.target.value},
         }); 
     }
 
