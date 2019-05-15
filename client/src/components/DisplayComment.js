@@ -16,7 +16,7 @@ class DisplayComment extends Component {
                 <div key={comment._id}>
                 <p>This is the comment - {comment.comment}</p>
                 <p><span>{comment.firstName}</span> {comment.timestamp}</p>
-                    <p>{this.getReplys()}</p>
+                    <div>{this.getReplys()}</div>
                 </div>
             )
         })
@@ -27,7 +27,7 @@ class DisplayComment extends Component {
             return this.props.recentComments.map(comment => {
                 return (
                     <div key={comment._id}>
-                    <p>This is the reply{comment.display_comments.reply}</p>
+                    {/* <p>This is the reply  {comment.replies.reply}</p> */}
                     <p><span>{comment.firstName}</span> {comment.timestamp}</p>
                     </div>
                 )
