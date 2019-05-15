@@ -11,8 +11,6 @@ module.exports = app => {
 
     app.get('/api/comment/verified', async (req, res) => {
         const comments = await Comment.aggregate([
-            // { $match: { comment : {$eq: "I'm new to coding and this helped a lot." }  }},
-
             { $match: { "_post" : ObjectId("5cd793573fadb2277a443287") }},
         
             {
@@ -23,19 +21,11 @@ module.exports = app => {
                     as: "replies"
                 }        
             },
-            // { $group: { _id: "$comment"},
-            // replies: { push: { _id: "$reply"} }
-        //  },
         {
-            // { $group: { _id: "$item", mergedSales: { $mergeObjects: "$quantity" } } }
             $replaceRoot: { newRoot: { $mergeObjects: [ { $arrayElemAt: [ "$replies", 1 ] }, "$$ROOT" ] } }
-         },
-         { $project: { replies: 1, comment: 1 }},
-            // { $unwind: { path: '$replies', preserveNullAndEmptyArrays: true},
-
-        // }, 
+        },
+            { $project: { replies: 1, comment: 1 , firstName: 1, timestamp: 1}},
         ])
-        console.log(comments);
         res.send(comments);
     });
 
