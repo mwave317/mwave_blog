@@ -16,9 +16,8 @@ export default class Routes extends Component {
     }
  
     render() {
-        // console.log(this.props);
+        console.log(this.props.date);
         return (
-
             <div>
                 <Route exact path="/" render={(props) => <Home {...props} title={this.props.title} body={this.props.body} date={this.props.date} onCommentSubmit={this.props.onCommentSubmit} />} />
                 <Route path="/about" component={ About } />

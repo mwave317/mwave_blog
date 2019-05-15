@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_ABOUT, FETCH_RECENT_POST, FETCH_PAST_THREE, FETCH_COMMENTS_NEEDING_REVIEW } from './types';
+import { FETCH_USER, FETCH_ABOUT, FETCH_RECENT_POST, FETCH_PAST_THREE, FETCH_COMMENTS_NEEDING_REVIEW, FETCH_RECENT_POST_COMMENTS } from './types';
 
 export const fetchUser = () => async dispatch => {
    const res = await axios.get('/api/current_user');
@@ -9,6 +9,11 @@ export const fetchUser = () => async dispatch => {
 export const fetchRecentPost = () => async dispatch => {
     const res = await axios.get('/api/posts/recent');
         dispatch({ type: FETCH_RECENT_POST, payload: res.data });
+ };
+
+ export const fetchRecentPostComments = () => async dispatch => {
+    const res = await axios.get('/api/comment/verified');
+        dispatch({ type: FETCH_RECENT_POST_COMMENTS, payload: res.data });
  };
 
  export const fetchPastThree = () => async dispatch => {

@@ -35,6 +35,7 @@ class ComponentReview extends Component {
     }
 
     render() {
+        console.log(this.props.review);
         return(
             <div>
                 {this.commentsNeedingReview()}

@@ -13,7 +13,7 @@ module.exports = app => {
         const recent = await Post.find().sort( {$natural: -1}).limit(4);
         recent.shift();
         res.send(recent);
-    })
+    });
 
     app.get('/api/posts/:postId', (req, res) => {
         res.send(res);

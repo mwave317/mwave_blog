@@ -1,6 +1,6 @@
 import  React, { Component } from 'react';
 import '../css/Details.css';
-import Comment from './Comment';
+import Comment from './AddComment';
 import Archives from './Archives';
 import Recent from './Recent';
 import { connect } from 'react-redux';

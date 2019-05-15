@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import '../css/Comment.css';
 import { connect } from 'react-redux';
-import Reply from './Reply';
 import * as actions from '../actions';
 import axios from 'axios';
 
-class Comment extends Component {
+class AddComment extends Component {
     constructor(props){
         super(props);
             this.state = {
                 comment: '',
                 active: false,
                 commentStatus: 'Leave a comment',
-                postId: '5cd793573fadb2277a443287',
-                userId: '5cd1d33ff90369044bb357c0',
-                firstName: '',
             }
     }
 
@@ -38,8 +34,8 @@ class Comment extends Component {
     submitComment = () => { 
         axios.post('/api/comment/add', {
             comment: this.state.comment,
-            _post: this.state.postId,
-            _user: this.state.userId,
+            _post: this.props.recent[0]._id,
+            _user: this.props.auth._id,
             timestamp: this.props.date,
             firstName: this.props.auth.firstName,
         });
@@ -65,15 +61,13 @@ class Comment extends Component {
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />
                      <button type="submit" onClick={this.submitComment} className="comment-button">Submit</button>
                   </div>
-
-                  {/* <Reply date={this.props.date} /> */}
             </div>
         )
     }
 }
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({ auth, recent }) {
+    return { auth, recent };
   }
   
-  export default connect(mapStateToProps, actions)(Comment);
+  export default connect(mapStateToProps, actions)(AddComment);
