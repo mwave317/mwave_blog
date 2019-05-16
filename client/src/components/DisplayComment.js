@@ -12,26 +12,37 @@ class DisplayComment extends Component {
 
     getComments() {
         return this.props.recentComments.map(comment => {
-            return (
-                <div key={comment._id}>
-                <p>This is the comment - {comment.comment}</p>
-                <p><span>{comment.firstName}</span> {comment.timestamp}</p>
-                    <div>{this.getReplys()}</div>
-                </div>
-            )
-        })
-}
-
-    getReplys() {
-       
-            return this.props.recentComments.map(comment => {
+            if (comment.replies.length === 0) {
                 return (
                     <div key={comment._id}>
-                    {/* <p>This is the reply  {comment.replies.reply}</p> */}
+                    <p>This is the comment - {comment.comment}</p>
                     <p><span>{comment.firstName}</span> {comment.timestamp}</p>
                     </div>
                 )
-            })
+            } else {
+                return (
+                    <div key={comment._id}>
+                <p>This is the comment - {comment.comment}</p>
+                <p><span>{comment.firstName}</span> {comment.timestamp}</p>
+                <p>{this.getReplys()}</p>
+                </div>
+
+                )
+            }
+        })
+    }
+
+    getReplys() {
+            return this.props.recentComments.map(comment => {                
+                    return comment.replies.map(replies => {
+                            return (
+                                <div key={comment._id}>
+                                <p>This is the reply  {replies.reply} </p>
+                                <p><span>{replies.firstName}</span> {replies.timestamp}</p>
+                                </div>
+                            )
+                    })
+            }) 
     }
 
     render() {
