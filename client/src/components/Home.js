@@ -3,14 +3,13 @@ import '../css/Home.css';
 import '../css/Media.css';
 import Post from './Post';
 import Details from './Details';
-import CommentReview from './CommentReview';
+import NeedingReview from './NeedingReview';
 import Reply from './Reply';
 import DisplayComments from './DisplayComment';
 
 export default class Home extends Component {
 
     render() {
-        console.log(this.props.date);
             return (  
                 <div>
                     <div className="name">
@@ -20,7 +19,7 @@ export default class Home extends Component {
                                    <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } />
                                 </div> 
                         </div>
-                           {/* <CommentReview/>  */}
+                           <NeedingReview/> 
                            <Reply date={this.props.date}/>
                     </div> 
                     <DisplayComments /> 

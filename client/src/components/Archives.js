@@ -13,26 +13,28 @@ export default class Archives extends Component {
 
     archivedMonths = () => {
         let date = new Date();
-
-
-    }
-
-    render() {
-        let date = new Date();
         let whatWasOneMonthAgo = date.getMonth()-1;
         let whatWasTwoMonthsAgo = date.getMonth()-2;
         let whatWasThreeMonthsAgo = date.getMonth()-3;
         let oneMonthAgo = this.state.months[whatWasOneMonthAgo];
         let twoMonthsAgo = this.state.months[whatWasTwoMonthsAgo];
         let threeMonthsAgo = this.state.months[whatWasThreeMonthsAgo];
-        
+        return(
+            <div className="archives-past">
+               <p className="archives-month">{oneMonthAgo}</p>
+               <p className="archives-month">{twoMonthsAgo}</p>
+               <p className="archives-month">{threeMonthsAgo}</p>
+           </div>
+        )
+
+    }
+
+    render() {        
         return (
             <div>
             <h4 className="archives">Archives</h4>
            <div className="archives-past">
-               <p className="archives-month">{oneMonthAgo}</p>
-               <p className="archives-month">{twoMonthsAgo}</p>
-               <p className="archives-month">{threeMonthsAgo}</p>
+              {this.archivedMonths()}
            </div>
         </div>
         )

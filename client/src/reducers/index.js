@@ -4,6 +4,7 @@ import recentReducer from './recentReducer';
 import recentPostCommentsReducer from './recentPostCommentsReducer'
 import pastThreeReducer from './pastThreeReducer';
 import commentsNeedingReviewReducer from './commentsNeedingReviewReducer';
+import repliesNeedingReviewReducer from './repliesNeedingReviewReducer';
 import aboutReducer from './aboutReducer';
 
 export default combineReducers({
@@ -11,6 +12,7 @@ export default combineReducers({
     recent: recentReducer,
     pastThree: pastThreeReducer,
     review: commentsNeedingReviewReducer,
+    reviewReplies: repliesNeedingReviewReducer,
     about: aboutReducer,
     recentComments: recentPostCommentsReducer,
 });

@@ -27,6 +27,7 @@ class AddAbout extends Component {
     }
 
     updateAbout() {
+       
         axios.patch('/api/about/update', {
             aboutId: this.props.about[0]._id,
             body: this.state.body,

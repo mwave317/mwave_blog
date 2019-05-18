@@ -9,8 +9,8 @@ class Reply extends Component {
             this.state = {
                 reply: '',
                 firstName: '',
-                _comment : '5cdb0cc9bed54f496830ea0d',
-                _post : '5cd7931f3fadb2277a443286',
+                _comment : '5cd797f2a5e47228874ed26c',
+                _post : '5cd7931f3fadb2277a443287',
                 _user : '5cd1d33ff90369044bb357c0',
             }
     }
@@ -25,7 +25,6 @@ class Reply extends Component {
     }
 
     submitReply = () => { 
-        console.log(this.props.auth.firstName);
         axios.post('/api/reply/add', {
             reply: this.state.reply,
             firstName: this.props.auth.firstName,
@@ -39,7 +38,6 @@ class Reply extends Component {
     };
 
     render() {
-        console.log(this.props.auth)
         return(
             <div>
                   <div>

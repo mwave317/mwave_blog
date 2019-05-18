@@ -12,7 +12,7 @@ const commentSchema = new Schema({
      type: String,
      required: [true]
    },
-   verified: {
+   reviewed: {
     type: Boolean,
     default: false,
    },

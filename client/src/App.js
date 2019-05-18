@@ -33,7 +33,6 @@ class App extends Component {
 
   render() {
     // let currentLocation = window.location.pathname;
-    console.log(this.state.date);
       return (
         <div >
           <BrowserRouter>

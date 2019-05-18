@@ -5,7 +5,7 @@ const Comment = mongoose.model('comment');
 
 module.exports = app => {
     app.get('/api/comment/not_verified', async (req, res) => {
-        const comments = await Comment.find( {verfied: { $exists: false}});
+        const comments = await Comment.find( {reviewed: false});
         res.send(comments);
     });
 
@@ -21,6 +21,10 @@ module.exports = app => {
                     as: "replies"
                 }        
             },
+            
+            { $match: { "reviewed" : { $eq: true }}},
+            // { $match: { "replies.reviewed" : { $eq: true }}},
+            // { $unwind: '$replies'},
         {
             $replaceRoot: { newRoot: { $mergeObjects: [ { $arrayElemAt: [ "$replies", 1 ] }, "$$ROOT" ] } }
         },

@@ -32,9 +32,13 @@ class AddComment extends Component {
     }
 
     submitComment = () => { 
+        let postId;
+        this.props.recent.map(post => {
+            return postId = post._id;
+        });
         axios.post('/api/comment/add', {
             comment: this.state.comment,
-            _post: this.props.recent[0]._id,
+            _post: postId,
             _user: this.props.auth._id,
             timestamp: this.props.date,
             firstName: this.props.auth.firstName,
@@ -52,6 +56,7 @@ class AddComment extends Component {
     }
 
     render() {
+        console.log(this.props.recent._id);
         const toggleActiveState = this.state.active ? 'comment-add' : 'hide'; 
         return (
             <div>
