@@ -12,6 +12,7 @@ module.exports = app => {
     app.get('/api/comment/verified', async (req, res) => {
         const comments = await Comment.aggregate([
             { $match: { "_post" : ObjectId("5cd793573fadb2277a443287") }},
+            { $match: { "reviewed" : { $eq: true }}},
         
             {
                 $lookup: {
@@ -21,26 +22,28 @@ module.exports = app => {
                     as: "replies"
                 }        
             },
-            
-            { $match: { "reviewed" : { $eq: true }}},
-            // { $match: { "replies.reviewed" : { $eq: true }}},
-            // { $unwind: '$replies'},
         {
             $replaceRoot: { newRoot: { $mergeObjects: [ { $arrayElemAt: [ "$replies", 1 ] }, "$$ROOT" ] } }
         },
-            { $project: { replies: 1, comment: 1 , firstName: 1, timestamp: 1}},
+            { $project: { replies: {
+                $filter: {
+                    "input": "$replies",
+                    "as": "reply",
+                    "cond": { "$eq": [ "$$reply.reviewed", true ]}
+                }
+            }, comment: 1 , firstName: 1, timestamp: 1}},
         ])
         res.send(comments);
     });
 
     app.post('/api/comment/add', requireLogin, (req, res) => {
-        console.log(req.body);
-        const { comment, _post, firstName , timestamp} = req.body;
+        const { comment, _post, firstName , _user, timestamp} = req.body;
 
         const addComment = new Comment ({
             comment,
             firstName,
             _post,
+            _user,
             timestamp,
             _user: req.user.id,
             
