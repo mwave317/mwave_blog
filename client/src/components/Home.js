@@ -4,7 +4,6 @@ import '../css/Media.css';
 import Post from './Post';
 import Details from './Details';
 // import NeedingReview from './NeedingReview';
-import Reply from './Reply';
 import DisplayComments from './DisplayComment';
 
 export default class Home extends Component {
@@ -20,9 +19,8 @@ export default class Home extends Component {
                                 </div> 
                         </div>
                            {/* <NeedingReview/>  */}
-                           <Reply date={this.props.date}/>
                     </div> 
-                    <DisplayComments /> 
+                    <DisplayComments date={this.props.date} /> 
                 </div>
             )  
     }
