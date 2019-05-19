@@ -11,7 +11,6 @@ class DisplayComment extends Component {
 
     getComments() {
         return this.props.recentComments.map(comment => {
-            console.log(this.props.recentComments);
             if (comment.replies.length === 0) {
                 return (
                     <div key={comment._id}>
@@ -55,7 +54,6 @@ class DisplayComment extends Component {
 }
 
 function mapStateToProps({ recentComments}) {
-    console.log( recentComments);
     return { recentComments };
 }
 
