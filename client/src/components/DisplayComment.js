@@ -14,20 +14,20 @@ class DisplayComment extends Component {
     getComments() {
         return this.props.recentComments.map(comment => {
                 return (
-                    <div className="test">
-                        <div className="display "  key={comment._id}>
+                    <div key={comment._id} className="test">
+                        <div className="display ">
                             <p> {comment.comment}</p>
                             <p><span>{comment.firstName}</span> {comment.timestamp}</p>
                         </div>
                       {this.getReplys(comment.replies)}
-                        <Reply date={this.props.date} />
+                        <Reply date={this.props.date} commentId ={comment._id} />
                     </div>
                 )
         })
     }
 
     getReplys(comment) {
-            return comment.map((comment, index) => {  
+            return comment.map((comment) => {  
                 return (
                     <div className="display display-reply" key={comment._id}>
                     <p>{comment.reply }</p>

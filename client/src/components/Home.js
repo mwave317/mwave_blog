@@ -13,7 +13,7 @@ export default class Home extends Component {
                 <div>
                     <div className="name">
                         <div className="home-post">
-                            <Post path={`$url}/$postId`} date={this.props.date} />
+                            <Post date={this.props.date} />
                                 <div className="home-details"> 
                                    <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } />
                                 </div> 

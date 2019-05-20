@@ -9,10 +9,7 @@ class Reply extends Component {
         super(props);
             this.state = {
                 reply: '',
-                firstName: '',
-                _comment : '5ce1518b989c2034ec510635',
                 _post : '5cd7931f3fadb2277a443287',
-                _user : '5cd1d33ff90369044bb357c0',
                 active: false,
                 replyStatus: 'Reply'
             }
@@ -39,9 +36,9 @@ class Reply extends Component {
             reply: this.state.reply,
             firstName: this.props.auth.firstName,
             timestamp: this.props.date,
-            _user: this.state._user,
+            _user: this.props.auth._id,
             _post: this.state._post,
-            _comment: this.state._comment,
+            _comment: this.props.commentId,
         });
 
         this.setState({ reply : ''});
@@ -56,7 +53,7 @@ class Reply extends Component {
                   <div className={toggleActiveState}>
                     <textarea className="reply-text" onChange= { ev => this.handleChange ('reply', ev)}
                      type='text' placeholder='Enter your reply here...' value= {this.state.reply} />
-                     <button type="submit" className="reply-button" type="submit" onClick={this.submitReply}>Submit</button>
+                     <button type="submit" className="reply-button" onClick={this.submitReply}>Submit</button>
                   </div>
             </div>
 
