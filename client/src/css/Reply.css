@@ -1,0 +1,44 @@
+.reply {
+    padding-left: 10vw;
+
+}
+
+.reply-text {
+    font-size: 1.5em;
+    resize: none;
+    width: 20vw;
+    height: 10vh;
+    outline: none;
+}
+
+.reply-button { /* These settings look good for the 6 and the XS Max in landscape */
+    
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0px;
+    background: gray;
+    color: white;
+    outline: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+
+.reply-button:hover,
+.reply-button:active {
+    background: white;
+    color: gray;
+    outline: none;
+}
+
+.hide {
+    display:none;
+}
+
+.reply-show {
+    margin-left: 10vw;
+}
+
+.reply-status {
+    margin-left: 32vw;
+}
+

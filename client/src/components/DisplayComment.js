@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRecentPostComments } from '../actions';
+import Reply from './Reply';
+import '../css/DisplayComment.css';
 
 
 class DisplayComment extends Component {
@@ -11,32 +13,23 @@ class DisplayComment extends Component {
 
     getComments() {
         return this.props.recentComments.map(comment => {
-            if (comment.replies.length === 0) {
                 return (
-                    <div key={comment._id}>
-                    <p>{comment.comment}</p>
-                    <p><span>{comment.firstName}</span> {comment.timestamp}</p>
+                    <div className="test">
+                        <div className="display "  key={comment._id}>
+                            <p> {comment.comment}</p>
+                            <p><span>{comment.firstName}</span> {comment.timestamp}</p>
+                        </div>
+                      {this.getReplys(comment.replies)}
+                        <Reply date={this.props.date} />
                     </div>
                 )
-            } else {
-                return (
-                    <div>
-                    <div key={comment._id}>
-                <p> {comment.comment}</p>
-                <p><span>{comment.firstName}</span> {comment.timestamp}</p>
-                {this.getReplys(comment.replies)}
-                </div>
-                </div>
-
-                )
-            }
         })
     }
 
     getReplys(comment) {
             return comment.map((comment, index) => {  
                 return (
-                    <div>
+                    <div className="display display-reply" key={comment._id}>
                     <p>{comment.reply }</p>
                     <p><span>{ comment.firstName}</span> {comment.timestamp}</p>
                     </div>
@@ -46,7 +39,7 @@ class DisplayComment extends Component {
 
     render() {
         return(
-            <div>
+            <div >
                 {this.getComments()}
             </div>
         )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import '../css/Reply.css';
 
 class Reply extends Component {
     constructor(props) {
@@ -12,9 +13,18 @@ class Reply extends Component {
                 _comment : '5ce1518b989c2034ec510635',
                 _post : '5cd7931f3fadb2277a443287',
                 _user : '5cd1d33ff90369044bb357c0',
+                active: false,
+                replyStatus: 'Reply'
             }
     }
-
+    toggleReplyStatus = () => {
+        if (this.props.auth) {
+            this.setState({active: !this.state.active});
+        this.setState({replyStatus: ''});
+        } else {
+            this.setState({replyStatus: 'Log in to reply'});
+        }
+}
 
     handleChange(state, ev) {
         if (ev.target.value.includes('<script>')) {
@@ -38,14 +48,27 @@ class Reply extends Component {
     };
 
     render() {
+        const toggleActiveState = this.state.active ? 'reply-show' : 'hide'; 
+
         return(
-            <div>
-                  <div>
-                    <textarea onChange= { ev => this.handleChange ('reply', ev)}
+            <div >
+                <p className="reply-status" onClick={this.toggleReplyStatus}>{this.state.replyStatus}</p>
+                  <div className={toggleActiveState}>
+                    <textarea className="reply-text" onChange= { ev => this.handleChange ('reply', ev)}
                      type='text' placeholder='Enter your reply here...' value= {this.state.reply} />
-                     <button type="submit" onClick={this.submitReply} className="addPost-button">Submit</button>
+                     <button type="submit" className="reply-button" type="submit" onClick={this.submitReply}>Submit</button>
                   </div>
             </div>
+
+
+
+
+
+
+
+
+
+
         )
     }
 }

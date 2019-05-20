@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/Comment.css';
+import '../css/AddComment.css';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import axios from 'axios';
@@ -56,13 +56,12 @@ class AddComment extends Component {
     }
 
     render() {
-        console.log(this.props.recent._id);
         const toggleActiveState = this.state.active ? 'comment-add' : 'hide'; 
         return (
             <div>
                   <p onClick={this.toggleClass}>{this.state.commentStatus}</p> 
                   <div className={toggleActiveState}>
-                    <textarea  className="comment-body" onChange= { ev => this.handleChange ('comment', ev)}
+                    <textarea className="comment-body" onChange= { ev => this.handleChange ('comment', ev)}
                      onKeyDown={ ev => this.keyPress(ev, this.state)} type='text' placeholder='Enter your comment here...' value= {this.state.comment } />
                      <button type="submit" onClick={this.submitComment} className="comment-button">Submit</button>
                   </div>

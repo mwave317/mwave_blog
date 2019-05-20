@@ -1,6 +1,6 @@
 import  React, { Component } from 'react';
 import '../css/Details.css';
-import Comment from './AddComment';
+import AddComment from './AddComment';
 import Archives from './Archives';
 import Recent from './Recent';
 import { connect } from 'react-redux';
@@ -27,7 +27,7 @@ class Details extends Component {
         return (
             <div className="details">
                 {this.detailsOfRecentPost()}
-                <Comment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} />
+                <AddComment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} />
                 <Archives />
                 <Recent />
             </div>

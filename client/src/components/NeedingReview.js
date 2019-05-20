@@ -66,7 +66,6 @@ class NeedingReview extends Component {
             <div>
                 {this.commentsNeedingReview()}
                 {this.repliesNeedingReview()}
-                <p>I'm connected and should be displaying Replys that need review.</p>
             </div>
         )
     }
