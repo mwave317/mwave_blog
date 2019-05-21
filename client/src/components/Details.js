@@ -4,7 +4,7 @@ import AddComment from './AddComment';
 import Archives from './Archives';
 import Recent from './Recent';
 import { connect } from 'react-redux';
-import { fetchRecentPost, fetchPastThree } from '../actions';
+import { fetchRecentPost, fetchPastThree, fetchPastPost } from '../actions';
 
 class Details extends Component {
 
@@ -23,20 +23,41 @@ class Details extends Component {
         })
     }
 
+    detailsOfPastPost() {
+            return(
+                <div key={this.props.past._id}>
+                    <p><span className="details-posted">Posted on </span>{this.props.past.timestamp}</p>
+                    <p><span className="details-posted">Posted in </span>{this.props.past.category}</p>
+                </div>
+            )  
+    }
+
+    showDetails() {
+        let details;
+        if (this.props.past._id === undefined) {
+           details =  this.detailsOfRecentPost();
+           return details;
+        } else {
+            details = this.detailsOfPastPost()
+            return details;
+        }
+
+    }
+
     render() {
         return (
             <div className="details">
-                {this.detailsOfRecentPost()}
-                <AddComment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} />
+               {this.showDetails()}
+                <AddComment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} postId={this.props.past._id} />
                 <Archives />
-                <Recent />
+                <Recent showPastPost={this.props.showPastPost} />
             </div>
         );
     }
 }
 
-function mapStateToProps({ recent, pastThree}) {
-    return { recent, pastThree };
+function mapStateToProps({ recent, pastThree, past}) {
+    return { recent, pastThree, past };
   }
   
-  export default connect(mapStateToProps, { fetchRecentPost, fetchPastThree })(Details);
+  export default connect(mapStateToProps, { fetchRecentPost, fetchPastThree, fetchPastPost })(Details);

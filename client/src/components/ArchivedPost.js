@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import '../css/ArchivedPost.css';
+// import '../css/ArchivedPost.css';
 import '../css/Media.css';
-import { connect } from 'react-redux';
-import { fetchArchivedPost } from '../actions';
 
-class ArchivedPost extends Component {
+export default class ArchivedPost extends Component {
 
         componentDidMount() {
-            this.props.fetchArchivedPost();
+            // this.props.fetchArchivedPost();
         }
 
         renderArchivedPost() {
@@ -24,14 +22,14 @@ class ArchivedPost extends Component {
         render() {
             return (
             <div className="archived-content">
-                    {this.renderArchivedPost()}
+                    {/* {this.renderArchivedPost()} */}
             </div>
             )
         }
 }
 
-function mapStateToProps({ archived }) {
-    return { archived };
-  }
+// function mapStateToProps({ archived }) {
+//     return { archived };
+//   }
   
-  export default connect(mapStateToProps, { fetchArchivedPost })(ArchivedPost);
+//   export default connect(mapStateToProps, { fetchArchivedPost })(ArchivedPost);

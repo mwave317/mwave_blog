@@ -12,6 +12,7 @@ import Nav from './components/Nav';
 class App extends Component {
   state = {
     date: '',
+    clickedPostId: '',
   }
 
   componentDidMount() {
@@ -23,6 +24,12 @@ class App extends Component {
     this.setState({ comment: state.comment, reviewed: state.reviewed });
   }
 
+  showPastPost(postId) {   
+    this.setState({clickedPostId: postId})
+    this.props.fetchPastPost(this.state.clickedPostId);
+
+}
+
   formatDate() {
     let date = new Date();
     let dateString = date.toDateString();
@@ -32,7 +39,6 @@ class App extends Component {
 }
 
   render() {
-    // let currentLocation = window.location.pathname;
       return (
         <div >
           <BrowserRouter>
@@ -40,7 +46,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav />
-                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} />
+                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} clickedPost={this.state.clickedPostId} />
               </div>
             </div>
           </BrowserRouter>

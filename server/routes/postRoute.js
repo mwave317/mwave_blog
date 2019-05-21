@@ -1,5 +1,7 @@
 const requireLogin = require('../middlewares/requireLogin');
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Types;
+
 const Post = mongoose.model('post');
 
 module.exports = app => {
@@ -9,19 +11,20 @@ module.exports = app => {
             res.send(posts);
     });
 
+    app.get('/api/posts/pastpost', async (req, res) => {
+        
+        const post = await Post.findOne( ObjectId(req.query._id))
+            res.send(post);
+    });
+
     app.get('/api/posts/recent/topthree', async (req, res) => {
         const recent = await Post.find().sort( {$natural: -1}).limit(4);
         recent.shift();
         res.send(recent);
     });
 
-    app.get('/api/posts/:postId', (req, res) => {
-        res.send(res);
-    });
-
     app.post('/api/posts/add', requireLogin, async (req, res) => {
         const { title, body , category, timestamp } = req.body;
-        console.log(req.body);
 
         const post = new Post({
             title,
@@ -32,12 +35,4 @@ module.exports = app => {
         })
         await post.save();
     }); 
-
-    app.put('/api/posts/:postId', requireLogin, async (req, res) => {
-
-    });
-
-    app.delete('/api/posts/:postId', requireLogin, async (req, res) => {
-
-    });
 }
