@@ -48,7 +48,7 @@ class Details extends Component {
         return (
             <div className="details">
                {this.showDetails()}
-                <AddComment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} postId={this.props.past._id} />
+                <AddComment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} keyPress={this.props.keyPress} postId={this.props.past._id} />
                 <Archives />
                 <Recent showPastPost={this.props.showPastPost} postId={this.props.postId} />
             </div>

@@ -38,6 +38,12 @@ class App extends Component {
     this.setState({ date: formattedDate});
 }
 
+  keyPress(ev) {
+    if (ev.key === "Enter") {
+      ev.preventDefault();
+    }
+  }
+
   render() {
       return (
         <div >
@@ -46,7 +52,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav />
-                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} postId={this.state.postId} />
+                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} postId={this.state.postId} keyPress={this.keyPress.bind(this)} />
               </div>
             </div>
           </BrowserRouter>

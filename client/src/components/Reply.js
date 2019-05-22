@@ -40,6 +40,12 @@ class Reply extends Component {
             _comment: this.props.commentId,
         });
 
+        if(this.state.active) {
+            this.setState({active: !this.state.active, replyStatus : 'Your reply is waiting for review.'});
+            } else {
+            this.setState({active: true, comment : ''})
+            }
+
         this.setState({ reply : ''});
     };
 
@@ -51,7 +57,7 @@ class Reply extends Component {
                 <p className="reply-status" onClick={this.toggleReplyStatus}>{this.state.replyStatus}</p>
                   <div className={toggleActiveState}>
                     <textarea className="reply-text" onChange= { ev => this.handleChange ('reply', ev)}
-                     type='text' placeholder='Enter your reply here...' value= {this.state.reply} />
+                     onKeyDown={ ev => this.props.keyPress(ev)} type='text' placeholder='Enter your reply here...' value= {this.state.reply} />
                      <button type="submit" className="reply-button" onClick={this.submitReply}>Submit</button>
                   </div>
             </div>
