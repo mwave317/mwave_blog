@@ -5,6 +5,7 @@ import About from './About';
 import Contact from './Contact';
 import AddPost from './AddPost';
 import AddAbout from './AddAbout';
+import NeedingReview from './NeedingReview';
 
 
 export default class Routes extends Component {
@@ -23,6 +24,7 @@ export default class Routes extends Component {
                 <Route path="/about" component={ About } />
                 <Route path="/contact" render={(props) => <Contact {...props} onFormSubmit={this.props.onFormSubmit} /> }/>
                 <Route path="/addpost" render={(props) => <AddPost {...props} addedTitle={this.props.addedTitle} addedBody={this.props.addedBody} date={this.props.date} onFormSubmit={this.props.onFormSubmit} />} />
+                <Route path="/review" component={ NeedingReview } />
                 <Route path="/addabout" render={(props) => <AddAbout {...props} onFormSubmit={this.props.onFormSubmit} />} />
             </div>
         )

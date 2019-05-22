@@ -32,6 +32,7 @@ export default class Nav extends Component {
                     <Link className="nav-link" to="/contact">Contact</Link>
                     <Link className="nav-link" to="/addpost">AddPost</Link>
                     <Link className="nav-link" to="/addabout">AddAbout</Link>
+                    <Link className="nav-link" to="/review">Review</Link>
                  </div>       
             </div>
         )

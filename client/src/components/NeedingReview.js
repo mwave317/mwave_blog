@@ -43,7 +43,7 @@ class NeedingReview extends Component {
 
     deleteComment(event) {
         axios.delete('/api/comment/verified/delete', {
-            data: {replyId: event.target.value},
+            data: {commentId: event.target.value},
         }); 
     }
 
