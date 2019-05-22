@@ -52,11 +52,13 @@ module.exports = app => {
     });
 
     app.patch('/api/comment/verified/update', async (req, res) => { 
-        const updateAComment = await Comment.updateOne( {_id : req.body.commentId}, { $set: { verified: req.body.verified}});
+        console.log(req.body);
+        const updateAComment = await Comment.updateOne( {_id : req.body.commentId}, { $set: { reviewed: req.body.reviewed}});
         res.send(updateAComment);
     });
 
     app.delete('/api/comment/verified/delete', async (req, res) => { 
+        console.log(req.body);
         const deleteAComment = await Comment.deleteOne( {_id : req.body.commentId});
         res.send(deleteAComment);
     });
