@@ -1,3 +1,7 @@
+This project will not work if you clone the repo. I don't have my private keys for the goole OAuth saved on Github. A working example is at https://mwave317.herokuapp.com.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
