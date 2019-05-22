@@ -31,22 +31,30 @@ class Reply extends Component {
     }
 
     submitReply = () => { 
+        let postId;
+
+        if(!this.props.postId) {
+            this.props.recent.map(post => {
+                return postId = post._id;
+            });
+        } 
+       else {
+            postId = this.props.postId;
+        }
         axios.post('/api/reply/add', {
             reply: this.state.reply,
             firstName: this.props.auth.firstName,
             timestamp: this.props.date,
             _user: this.props.auth._id,
-            _post: this.props.postId,
+            _post: postId,
             _comment: this.props.commentId,
         });
 
         if(this.state.active) {
             this.setState({active: !this.state.active, replyStatus : 'Your reply is waiting for review.'});
             } else {
-            this.setState({active: true, comment : ''})
+            this.setState({active: true, reply : ''})
             }
-
-        this.setState({ reply : ''});
     };
 
     render() {
@@ -75,8 +83,8 @@ class Reply extends Component {
     }
 }
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({ auth, recent}) {
+    return { auth, recent };
 }
 
 export default connect(mapStateToProps, actions)(Reply);

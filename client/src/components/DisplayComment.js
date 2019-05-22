@@ -8,7 +8,11 @@ import '../css/DisplayComment.css';
 class DisplayComment extends Component {
 
     componentDidMount() {
-        this.props.fetchPostComments(this.props.postId);
+        if (this.props.postId) {
+            console.log(this.props.postId);
+            this.props.fetchPostComments(this.props.postId);
+        }
+        
     }
 
     getComments() {
