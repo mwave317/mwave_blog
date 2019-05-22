@@ -33,9 +33,16 @@ class AddComment extends Component {
 
     submitComment = () => { 
         let postId;
-        this.props.recent.map(post => {
-            return postId = post._id;
-        });
+        if(!this.props.postId) {
+            this.props.recent.map(post => {
+                return postId = post._id;
+            });
+        } 
+       else {
+            postId = this.props.postId;
+        }
+       
+        console.log(postId);
         axios.post('/api/comment/add', {
             comment: this.state.comment,
             _post: postId,

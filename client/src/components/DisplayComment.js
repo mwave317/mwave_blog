@@ -20,7 +20,7 @@ class DisplayComment extends Component {
                             <p><span>{comment.firstName}</span> {comment.timestamp}</p>
                         </div>
                       {this.getReplys(comment.replies)}
-                        <Reply date={this.props.date} commentId ={comment._id} />
+                        <Reply date={this.props.date} commentId ={comment._id} postId={this.props.postId} />
                     </div>
                 )
         })

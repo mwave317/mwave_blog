@@ -10,8 +10,6 @@ module.exports = app => {
     });
 
     app.get('/api/comment/verified', async (req, res) => {
-        console.log(req.params);
-        console.log('Do you see this')
         const comments = await Comment.aggregate([
             { $match: { "_post" : ObjectId(req.query._id)}},
             { $match: { "reviewed" : { $eq: true }}},
@@ -35,7 +33,6 @@ module.exports = app => {
                 }
             }, comment: 1 , firstName: 1, timestamp: 1}},
         ])
-        console.log(comments);
         res.send(comments);
     });
 

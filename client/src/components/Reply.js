@@ -9,7 +9,6 @@ class Reply extends Component {
         super(props);
             this.state = {
                 reply: '',
-                _post : '5cd7931f3fadb2277a443287',
                 active: false,
                 replyStatus: 'Reply'
             }
@@ -37,7 +36,7 @@ class Reply extends Component {
             firstName: this.props.auth.firstName,
             timestamp: this.props.date,
             _user: this.props.auth._id,
-            _post: this.state._post,
+            _post: this.props.postId,
             _comment: this.props.commentId,
         });
 
