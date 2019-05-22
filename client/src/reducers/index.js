@@ -1,7 +1,7 @@
 import {combineReducers } from 'redux';
 import authReducer from './authReducer';
 import recentReducer from './recentReducer';
-import recentPostCommentsReducer from './recentPostCommentsReducer'
+import postCommentsReducer from './postCommentsReducer'
 import pastThreeReducer from './pastThreeReducer';
 import pastPostReducer from './pastPostReducer';
 import commentsNeedingReviewReducer from './commentsNeedingReviewReducer';
@@ -16,5 +16,5 @@ export default combineReducers({
     review: commentsNeedingReviewReducer,
     reviewReplies: repliesNeedingReviewReducer,
     about: aboutReducer,
-    recentComments: recentPostCommentsReducer,
+    comments: postCommentsReducer,
 });

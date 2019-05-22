@@ -12,7 +12,7 @@ import Nav from './components/Nav';
 class App extends Component {
   state = {
     date: '',
-    clickedPostId: '',
+    postId: '',
   }
 
   componentDidMount() {
@@ -25,9 +25,9 @@ class App extends Component {
   }
 
   showPastPost(postId) {   
-    this.setState({clickedPostId: postId})
-    this.props.fetchPastPost(this.state.clickedPostId);
-
+    this.setState({postId})
+    this.props.fetchPastPost(this.state.postId);
+    this.props.fetchPostComments(this.state.postId);
 }
 
   formatDate() {
@@ -46,7 +46,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav />
-                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} clickedPost={this.state.clickedPostId} />
+                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} postId={this.state.postId} />
               </div>
             </div>
           </BrowserRouter>

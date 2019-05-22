@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchRecentPostComments } from '../actions';
+import { fetchPostComments } from '../actions';
 import Reply from './Reply';
 import '../css/DisplayComment.css';
 
@@ -8,11 +8,11 @@ import '../css/DisplayComment.css';
 class DisplayComment extends Component {
 
     componentDidMount() {
-        this.props.fetchRecentPostComments();
+        this.props.fetchPostComments(this.props.postId);
     }
 
     getComments() {
-        return this.props.recentComments.map(comment => {
+        return this.props.comments.map(comment => {
                 return (
                     <div key={comment._id} className="test">
                         <div className="display ">
@@ -46,8 +46,8 @@ class DisplayComment extends Component {
     }
 }
 
-function mapStateToProps({ recentComments}) {
-    return { recentComments };
+function mapStateToProps({ comments}) {
+    return { comments, };
 }
 
-  export default connect(mapStateToProps, { fetchRecentPostComments })(DisplayComment);
+  export default connect(mapStateToProps, { fetchPostComments })(DisplayComment);

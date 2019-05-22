@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import '../css/Post.css';
 import '../css/Media.css';
 import { connect } from 'react-redux';
-import { fetchRecentPost } from '../actions';
+import { fetchRecentPost, fetchPostComments } from '../actions';
 
 class Post extends Component {
 
         componentDidMount() {
-            this.props.fetchRecentPost();
+            this.props.fetchRecentPost(this.props.recent._id);
+            
         }
 
         renderRecentPost() {
@@ -34,5 +35,5 @@ function mapStateToProps({ recent}) {
     return { recent };
   }
   
-  export default connect(mapStateToProps, { fetchRecentPost })(Post);
+  export default connect(mapStateToProps, { fetchRecentPost, fetchPostComments })(Post);
   

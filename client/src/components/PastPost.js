@@ -8,7 +8,7 @@ import { fetchPastPost } from '../actions';
 class PastPost extends Component {
 
         componentDidMount() {
-            this.props.fetchPastPost(this.props.clickedPost);
+            this.props.fetchPastPost(this.props.postId);
         }
 
         renderPastPost() {
@@ -23,7 +23,6 @@ class PastPost extends Component {
         }
 
         render() {
-            console.log(this.props.clickedPost);
             return (
             <div className="post-content">
                      <div key={this.props.past._id}>
@@ -36,7 +35,6 @@ class PastPost extends Component {
 }
 
 function mapStateToProps({ past}) {
-    console.log(past)
     return { past };
   }
   
