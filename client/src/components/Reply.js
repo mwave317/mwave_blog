@@ -53,8 +53,9 @@ class Reply extends Component {
         if(this.state.active) {
             this.setState({active: !this.state.active, replyStatus : 'Your reply is waiting for review.'});
             } else {
-            this.setState({active: true, reply : ''})
+            this.setState({active: true})
             }
+            this.setState({reply: ''})
     };
 
     render() {

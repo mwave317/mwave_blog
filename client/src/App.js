@@ -12,7 +12,7 @@ import Nav from './components/Nav';
 class App extends Component {
   state = {
     date: '',
-    postId: '',
+    postId: this.props.recent._id,
   }
 
   componentDidMount() {

@@ -53,8 +53,9 @@ class AddComment extends Component {
             if(this.state.active) {
             this.setState({active: !this.state.active, commentStatus : 'Your comment is waiting for review.'});
             } else {
-            this.setState({active: true, comment : ''})
+            this.setState({active: true})
             }
+            this.setState({ comment : ''})
     }
 
     render() {
