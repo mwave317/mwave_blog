@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I don't have my private keys for google OAuth saved on Github. A working example is at https://mwave317.herokuapp.com.
+
 
 ## Available Scripts
 
