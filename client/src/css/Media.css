@@ -20,7 +20,6 @@
     .post-content {
       margin: 20px 30px 0px 10px;
       padding: 0px 20px 0px 25px; 
-      padding-left: 50px;
       /* Need to change the left padding for smaller screens */
   }
 
@@ -33,14 +32,14 @@
       width: 18vw;
     }
 
-    .about {
+    /* .about {
       padding-left: 50px;
-  }
+  } */
 
-    .about-title {
+    /* .about-title {
       font-size: 2em;
       margin-top: 1.5em;
-    }
+    } */
 
     .contact-title {
       margin-top: 1.15em;

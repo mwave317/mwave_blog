@@ -1,7 +1,32 @@
+.review {
+    height: 45vh;
+    padding-left: 4vw;
+}
+
+.review-title {
+    font-size: 2em;
+}
+
+.review-needed {
+  border: 3px solid rgb(199, 189, 189);
+  padding: 1.25em;
+  text-align: center;
+  width: 15em;
+  white-space: pre-line;
+}
+
 .hide {
     display: none;
 }
 
 .show {
     display: block;
+}
+
+@media only screen and (min-width:1242px) and (max-width:2688px) {
+    .review {
+        height: 45vh;
+        
+    }
+
 }

@@ -1,7 +1,12 @@
 .addAbout {
     display: flex;
     justify-content: center;
-    padding-left: 8vw;
+    padding-top: 1.5vh;
+    padding-left: 4vw;
+}
+
+.addAbout-title {
+    font-size: 2em;
 }
 
 .addAbout-heading { /* These settings look good for the 6 and the XS Max in landscape */

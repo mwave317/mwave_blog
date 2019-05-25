@@ -1,0 +1,21 @@
+.past {
+    display: flex;
+    align-items: flex-start;
+    /* Need to change the left padding for smaller screens */
+    white-space: pre-line;
+    margin: 0px 2vh 0px 10px;
+    padding: 0px 20px 0px 25px; 
+    /* margin-left: 4vh;
+ } */
+}
+
+.past-title {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: .20em;
+}
+
+.past-line {
+    white-space: pre-line;
+
+}

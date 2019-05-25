@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import './index.css';
+import './css/Media.css';
 import reducers from './reducers';
 import App from './App';
 

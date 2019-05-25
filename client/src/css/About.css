@@ -1,5 +1,11 @@
+.about {
+    padding-left: 1.5vw;
+    padding-top: 0vh;
+}
+
 .about-title {
-    padding-left: 15px;
+    font-size: 2em;
+    margin-top: 1.25em;
 }
 
 .about-body {

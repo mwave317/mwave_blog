@@ -3,11 +3,14 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { fetchCommentsNeedingReview, fetchRepliesNeedingReview } from '../actions';
 import '../css/NeedingReview.css';
+import '../css/Media.css';
 
 
 class NeedingReview extends Component {
-    constructor(){
+    constructor() {
         super();
+        this.state = {
+        }
     }
 
     componentDidMount() {
@@ -16,10 +19,10 @@ class NeedingReview extends Component {
     }
 
     commentsNeedingReview = () => {
-        return this.props.review.map(comment => {
+        return this.props.review.map((comment, index) => {
                 return (
-                    <div key={comment._id}>
-                     <p>{comment.comment} - {comment.firstName}</p>
+                    <div key={comment._id} value={index}>
+                     <p className="review-needed">{comment.comment} - {comment.firstName}</p>
                      <button value={comment._id} type="submit"  onClick={this.acceptComment}>Update Comment</button> 
                      <button value={comment._id}  type="submit" onClick={this.deleteComment}>Delete Comment</button>
                     </div>
@@ -30,27 +33,29 @@ class NeedingReview extends Component {
     repliesNeedingReview() {
         return this.props.reviewReplies.map(reply => {
             return (
-                <div key={reply._id} >
-                 <p>{reply.reply} - {reply.firstName}</p>
-                 <button value={reply._id} type="submit"  onClick={this.acceptReply}>Update Reply</button> 
-                 <button value={reply._id}  type="submit" onClick={this.deleteReply}>Delete Reply</button>
-                </div>
+                    <div key={reply._id} >
+                     <p className="review-needed">{reply.reply} - {reply.firstName}</p>
+                     <button value={reply._id} type="submit"  onClick={this.acceptReply}>Update Reply</button> 
+                     <button value={reply._id}  type="submit" onClick={this.deleteReply}>Delete Reply</button>
+                    </div>
             ) 
             
         });
     }
 
     acceptComment = (event) => {
+        console.log(event);
         axios.patch('/api/comment/verified/update', {
             commentId: event.target.value,
             reviewed: true,
-        })
+        })  
     }
 
     deleteComment = (event) => {
         axios.delete('/api/comment/verified/delete', {
             data: {commentId: event.target.value},
         }); 
+        this.setState({active: true})
     }
 
     acceptReply = (event) => {
@@ -67,10 +72,10 @@ class NeedingReview extends Component {
     }
 
     render() {
-        console.log(this.props.review);
         if (this.props.review.length > 0) {
             return(
-                <div>
+                <div className="review">
+                    <h4 className="review-title">Needing Review</h4>
                     {this.commentsNeedingReview()}
                     {this.repliesNeedingReview()}
                 </div>
@@ -78,7 +83,8 @@ class NeedingReview extends Component {
 
         } else {
             return (
-                <div>
+                <div className="review">
+                    <h4 className="review-title">Needing Review</h4>
                     <p>There's nothing to review.</p>
                 </div>
             )
