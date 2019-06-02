@@ -24,10 +24,10 @@ class App extends Component {
     this.setState({ comment: state.comment, reviewed: state.reviewed });
   }
 
-  showPastPost(postId) {   
+  showPastPost = (postId) => {  
     this.setState({postId})
-    this.props.fetchPastPost(this.state.postId);
-    this.props.fetchPostComments(this.state.postId);
+    this.props.fetchPastPost(postId);
+    this.props.fetchPostComments(postId);
 }
 
   formatDate() {
