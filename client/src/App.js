@@ -31,7 +31,6 @@ class App extends Component {
 }
 
   getRecent = () => {
-    console.log('Are you seeing this');
     this.setState({postId: ''});
   };
 

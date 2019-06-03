@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../css/Post.css';
 import '../css/Media.css';
 import { connect } from 'react-redux';
@@ -8,7 +9,9 @@ class Post extends Component {
 
         componentDidMount() {
             this.props.fetchRecentPost(this.props.recent._id);
-            
+
+            let test = axios.get('/api/posts/archivedposts')
+            console.log(test);
         }
 
         renderRecentPost() {
