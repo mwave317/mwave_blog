@@ -11,7 +11,6 @@ import { fetchPastPost } from '../actions';
 
 class Home extends Component {
     render() {
-
             return (  
                 <div>
                     <div className="name">
@@ -23,7 +22,7 @@ class Home extends Component {
                               )
                             } */}
 
-                            { (this.props.postId ? <PastPost clickedPost={this.props.clickedPost} postId={this.props.postId} /> : <Post date={ this.props.date } postId={this.props.postId} />)
+                            { (this.props.postId ? <PastPost postId={this.props.postId} /> : <Post date={ this.props.date } postId={this.props.postId} />)
 
                             }
 

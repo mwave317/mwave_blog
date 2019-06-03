@@ -12,7 +12,7 @@ import Nav from './components/Nav';
 class App extends Component {
   state = {
     date: '',
-    postId: this.props.recent._id,
+    postId: '',
   }
 
   componentDidMount() {
@@ -29,6 +29,11 @@ class App extends Component {
     this.props.fetchPastPost(postId);
     this.props.fetchPostComments(postId);
 }
+
+  getRecent = () => {
+    console.log('Are you seeing this');
+    this.setState({postId: ''});
+  };
 
   formatDate() {
     let date = new Date();
@@ -51,7 +56,7 @@ class App extends Component {
             <div>
               <Header />
               <div className="main-layout">
-                <Nav />
+                <Nav getRecent={this.getRecent} />
                 <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} postId={this.state.postId} keyPress={this.keyPress.bind(this)} />
               </div>
             </div>
