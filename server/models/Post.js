@@ -12,7 +12,7 @@ const postSchema = new Schema({
         required: [true]
     },
 
-    timestamp: {
+    postedOn: {
         type: String,
         required: [true]
     }, 
@@ -21,6 +21,12 @@ const postSchema = new Schema({
         type: String,
         required: [true]
     },
+
+    timestamp: {
+        type: Date,
+        default: Date.now(),
+    },
+
     _user: { 
         type: Schema.Types.ObjectId,
         ref: 'User',

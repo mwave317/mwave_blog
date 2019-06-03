@@ -22,7 +22,7 @@ class Recent extends Component {
     pastThreePosts() { 
         return this.props.pastThree.map(pastPost => {
             return(
-                    <p key={ pastPost._id }><span  ref={this.archivedId} onClick={() => this.props.showPastPost(pastPost._id)} className="recent-title">{pastPost.title} </span>{pastPost.timestamp}</p> 
+                    <p key={ pastPost._id }><span  ref={this.archivedId} onClick={() => this.props.showPastPost(pastPost._id)} className="recent-title">{pastPost.title} </span>{pastPost.postedOn}</p> 
             )
            
         })

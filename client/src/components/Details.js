@@ -16,7 +16,7 @@ class Details extends Component {
         return this.props.recent.map(details => {
             return(
                 <div key={details._id}>
-                    <p><span className="details-posted">Posted on </span>{details.timestamp}</p>
+                    <p><span className="details-posted">Posted on </span>{details.postedOn}</p>
                     <p><span className="details-posted">Posted in </span>{details.category}</p>
                 </div>
             )  
@@ -26,7 +26,7 @@ class Details extends Component {
     detailsOfPastPost() {
             return(
                 <div key={this.props.past._id}>
-                    <p><span className="details-posted">Posted on </span>{this.props.past.timestamp}</p>
+                    <p><span className="details-posted">Posted on </span>{this.props.past.postedOn}</p>
                     <p><span className="details-posted">Posted in </span>{this.props.past.category}</p>
                 </div>
             )  
