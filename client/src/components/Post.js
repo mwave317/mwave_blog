@@ -10,7 +10,7 @@ class Post extends Component {
         componentDidMount() {
             this.props.fetchRecentPost(this.props.recent._id);
 
-            let test = axios.get('/api/posts/archivedposts')
+            let test = axios.get('/api/posts/archivedposts', {params: { start_date : "2019-05-01", end_date: "2019-05-31"  }})
             console.log(test);
         }
 

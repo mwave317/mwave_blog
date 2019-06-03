@@ -23,8 +23,7 @@ module.exports = app => {
     });
 
     app.get('/api/posts/archivedposts', async (req, res) => {  
-        console.log(req.query._id); 
-        const post = await Post.aggregate([{ $match: { "timestamp": { $gte: "2019-05-08", $lte: "2019-05-12" }}}]);
+        const post = await Post.aggregate([{ $match: { "timestamp": { $gte: req.query.start_date , $lte: req.query.end_date }}}]);
         console.log('These are the posts', post);
             res.send(post);
     });
