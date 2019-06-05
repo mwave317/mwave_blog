@@ -27,7 +27,7 @@ class Home extends Component {
                             }
 
                                 <div className="home-details"> 
-                                   <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } showPastPost={this.props.showPastPost} keyPress={this.props.keyPress} postId={this.props.postId} />
+                                   <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } showPastPost={this.props.showPastPost} keyPress={this.props.keyPress} postId={this.props.postId} getArchivedDate={this.props.getArchivedDate} />
                                 </div> 
                         </div>
                     </div> 

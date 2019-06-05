@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_ABOUT, FETCH_RECENT_POST, FETCH_PAST_THREE, FETCH_PAST_POST, FETCH_COMMENTS_NEEDING_REVIEW, FETCH_REPLIES_NEEDING_REVIEW, FETCH_POST_COMMENTS } from './types';
+import { FETCH_USER, FETCH_ABOUT, FETCH_RECENT_POST, FETCH_PAST_THREE, FETCH_PAST_POST, FETCH_ARCHIVED_POSTS, FETCH_COMMENTS_NEEDING_REVIEW, FETCH_REPLIES_NEEDING_REVIEW, FETCH_POST_COMMENTS} from './types';
+// import { start } from 'repl';
 
 export const fetchUser = () => async dispatch => {
    const res = await axios.get('/api/current_user');
@@ -26,6 +27,12 @@ export const fetchRecentPost = () => async  dispatch => {
     const res = await axios.get('/api/posts/pastpost', {params: { _id: post }} );
         dispatch({ type: FETCH_PAST_POST, payload: res.data });
         dispatch(fetchPostComments(post));
+ };
+
+ export const fetchArchivedPosts = (start, end) => async dispatch => {
+    const res = await axios.get('/api/posts/archivedposts', {params: { start_date: start, end_date: end }} );
+        dispatch({ type: FETCH_ARCHIVED_POSTS, payload: res.data });
+        // dispatch(fetchPostComments(post));
  };
 
  export const fetchCommentsNeedingReview = () => async dispatch => {

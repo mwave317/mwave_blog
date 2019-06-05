@@ -19,7 +19,7 @@ class NeedingReview extends Component {
     }
 
     commentsNeedingReview = () => {
-        return this.props.review.map((comment, index) => {
+        return this.props.reviewComments.map((comment, index) => {
                 return (
                     <div key={comment._id} value={index}>
                      <p className="review-needed">{comment.comment} - {comment.firstName}</p>
@@ -44,7 +44,6 @@ class NeedingReview extends Component {
     }
 
     acceptComment = (event) => {
-        console.log(event);
         axios.patch('/api/comment/verified/update', {
             commentId: event.target.value,
             reviewed: true,
@@ -72,7 +71,7 @@ class NeedingReview extends Component {
     }
 
     render() {
-        if (this.props.review.length > 0) {
+        if (this.props.reviewComments.length > 0 || this.props.reviewReplies.length > 0) {
             return(
                 <div className="review">
                     <h4 className="review-title">Needing Review</h4>
@@ -93,8 +92,8 @@ class NeedingReview extends Component {
     }
 }
 
-function mapStateToProps({ review, reviewReplies}) {
-    return { review, reviewReplies };
+function mapStateToProps({ reviewComments, reviewReplies}) {
+    return { reviewComments, reviewReplies };
   }
   
   export default connect(mapStateToProps, { fetchCommentsNeedingReview, fetchRepliesNeedingReview })(NeedingReview);

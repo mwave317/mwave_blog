@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import '../css/Post.css';
 import '../css/Media.css';
 import { connect } from 'react-redux';
-import { fetchRecentPost, fetchPostComments } from '../actions';
+import { fetchRecentPost, fetchPostComments, fetchArchivedPosts } from '../actions';
 
 class Post extends Component {
 
         componentDidMount() {
             this.props.fetchRecentPost(this.props.recent._id);
-
-            let test = axios.get('/api/posts/archivedposts', {params: { start_date : "2019-05-01", end_date: "2019-05-31"  }})
-            console.log(test);
+            
+            let test = "2019-05-01";
+            let testing = "2019-05-31";
+            this.props.fetchArchivedPosts(test, testing)
+            // let test = axios.get('/api/posts/archivedposts', {params: { start_date : "2019-05-01", end_date: "2019-05-31"  }})
+            // console.log(test);
         }
 
         renderRecentPost() {
@@ -38,5 +41,5 @@ function mapStateToProps({ recent}) {
     return { recent };
   }
   
-  export default connect(mapStateToProps, { fetchRecentPost, fetchPostComments })(Post);
+  export default connect(mapStateToProps, { fetchRecentPost, fetchPostComments, fetchArchivedPosts })(Post);
   

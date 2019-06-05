@@ -49,7 +49,7 @@ class Details extends Component {
             <div className="details">
                {this.showDetails()}
                 <AddComment onCommentSubmit={this.props.onCommentSubmit} date={this.props.date} keyPress={this.props.keyPress} postId={this.props.past._id} />
-                <Archives />
+                <Archives getArchivedDate={this.props.getArchivedDate} />
                 <Recent showPastPost={this.props.showPastPost} postId={this.props.postId} />
             </div>
         );

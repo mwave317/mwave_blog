@@ -13,6 +13,8 @@ class App extends Component {
   state = {
     date: '',
     postId: '',
+    start_date: '', 
+    end_date: '',
   }
 
   componentDidMount() {
@@ -40,6 +42,20 @@ class App extends Component {
     let formattedDate = dateString.split(' ').splice(1).join(' ');
 
     this.setState({ date: formattedDate});
+  }
+
+  getArchivedDate(month, year) {
+    if (month < 10) {
+        month = "0" + month;
+    }
+
+    let dash = "-";
+    let beginningOfMonth = "01";
+    let endOfMonth = "31";
+    let start_date = year + dash + month + dash + beginningOfMonth;
+    let end_date = year + dash + month + dash + endOfMonth;
+    
+    this.setState({ start_date, end_date })
 }
 
   keyPress(ev) {
@@ -56,7 +72,7 @@ class App extends Component {
               <Header />
               <div className="main-layout">
                 <Nav getRecent={this.getRecent} />
-                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} postId={this.state.postId} keyPress={this.keyPress.bind(this)} />
+                <Routes date={this.state.date} onCommentSubmit={this.onCommentSubmit.bind(this)} showPastPost={this.showPastPost.bind(this)} postId={this.state.postId} keyPress={this.keyPress.bind(this)} getArchivedDate={this.getArchivedDate.bind(this)} />
               </div>
             </div>
           </BrowserRouter>
