@@ -11,19 +11,6 @@ export default class Archives extends Component {
         
     }
 
-    // getArchivedDate(month, year) {
-    //     if (month < 10) {
-    //         month = "0" + month;
-    //         console.log(month);
-    //     }
-
-    //     let start_date = year + "-" + month + "-" + "01";
-    //     let end_date = year + "-" + month + "-" + "31";
-    //     console.log(start_date);
-    //     console.log(end_date);
-    //     return start_date, end_date; 
-    // }
-
     archivedMonths = () => {
         let date = new Date();
         let year = date.getFullYear();
