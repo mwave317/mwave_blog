@@ -10,7 +10,7 @@ const commentSchema = new Schema({
    },
    timestamp: {
      type: String,
-     required: [true]
+     required: true,
    },
    reviewed: {
     type: Boolean,

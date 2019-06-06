@@ -15,17 +15,7 @@ class Home extends Component {
                 <div>
                     <div className="name">
                         <div className="home-post">
-                            {/* { (this.state.test &&
-                                <PastPost />
-                              ) || (
-                                  <Post date={ this.props.date } />
-                              )
-                            } */}
-
-                            { (this.props.postId ? <PastPost postId={this.props.postId} /> : <Post date={ this.props.date } postId={this.props.postId} />)
-
-                            }
-
+                            { (this.props.postId ? <PastPost postId={this.props.postId} /> : <Post date={ this.props.date } postId={this.props.postId} />)}
                                 <div className="home-details"> 
                                    <Details date={this.props.date} onCommentSubmit={this.props.onCommentSubmit } showPastPost={this.props.showPastPost} keyPress={this.props.keyPress} postId={this.props.postId} getArchivedDate={this.props.getArchivedDate} />
                                 </div> 
@@ -39,6 +29,6 @@ class Home extends Component {
 
 function mapStateToProps({ past}) {
     return { past };
-  }
+}
   
-  export default connect(mapStateToProps, { fetchPastPost })(Home);
+export default connect(mapStateToProps, { fetchPastPost })(Home);

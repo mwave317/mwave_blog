@@ -17,11 +17,6 @@ const postSchema = new Schema({
         required: [true]
     }, 
 
-    category: {
-        type: String,
-        required: [true]
-    },
-
     timestamp: {
         type: Date,
         default: Date.now(),

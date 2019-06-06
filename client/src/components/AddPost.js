@@ -9,7 +9,6 @@ export default class AddPost extends Component {
         this.state = {
             title: '',
             body: '',
-            category: '',
             postedOn: '',
         }
     }
@@ -29,7 +28,6 @@ export default class AddPost extends Component {
         axios.post('/api/posts/add', {
             title: this.state.title, 
             body: this.state.body,
-            category: this.state.category,
             postedOn: this.props.date,
         });
     }
@@ -47,16 +45,7 @@ export default class AddPost extends Component {
 
                     <textarea className="addPost-body" onChange= { ev => this.handleChange ('body', ev)}
                     type='text' placeholder='Body.' value= {this.state.body } />
-                     <div>
-                        <label>Choose a category:</label>
-                        <select value={this.state.category} onChange={ev => this.handleChange ('category', ev)}>
-                            <option value="javascript">JavaScript</option>
-                            <option value="react">React</option>
-                            <option value="angular">Angular</option>
-                            <option value="mongodb">Mongo DB</option>
-                        </select>
-                    </div>
-
+                    
                     <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
                 </form>
             </div>

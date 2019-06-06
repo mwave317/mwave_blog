@@ -12,7 +12,6 @@ module.exports = app => {
     });
 
     app.get('/api/posts/pastpost', async (req, res) => {  
-        console.log(req.query._id); 
         const post = await Post.findOne(ObjectId(req.query._id))
             res.send(post);
     });
@@ -24,19 +23,17 @@ module.exports = app => {
 
     app.get('/api/posts/archivedposts', async (req, res) => {  
         const post = await Post.aggregate([{ $match: { "timestamp": { $gte: req.query.start_date , $lte: req.query.end_date }}}]);
-        console.log('These are the posts', post);
             res.send(post);
     });
 
     
 
     app.post('/api/posts/add', requireLogin, async (req, res) => {
-        const { title, body , category, postedOn } = req.body;
+        const { title, body , postedOn } = req.body;
 
         const post = new Post({
             title,
             body, 
-            category,
             postedOn,
             _user: req.user.id,
         })

@@ -6,7 +6,6 @@ module.exports = app => {
 
     app.get('/api/replies/not_verified', async (req, res) => {
         const reviewReplies = await Reply.find( {reviewed: false});
-        console.log(reviewReplies);
         res.send(reviewReplies);
     });
 

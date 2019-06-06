@@ -41,6 +41,7 @@ class Reply extends Component {
        else {
             postId = this.props.postId;
         }
+        
         axios.post('/api/reply/add', {
             reply: this.state.reply,
             firstName: this.props.auth.firstName,

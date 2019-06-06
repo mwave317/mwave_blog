@@ -1,35 +1,39 @@
 import React, { Component } from 'react';
-// import '../css/ArchivedPost.css';
-import '../css/Media.css';
+import '../css/ArchivedPost.css';
+// import '../css/Media.css';
+import { connect } from 'react-redux';
+import { fetchArchivedPosts } from '../actions';
 
-export default class ArchivedPost extends Component {
+class ArchivedPost extends Component {
 
         componentDidMount() {
-            // this.props.fetchArchivedPost();
+            this.props.fetchArchivedPosts();
         }
 
         renderArchivedPost() {
             return this.props.archived.map(archived => {
                 return (
                     <div key={archived._id}>
-                        <h4 className="archived-title">{archived.title}</h4>
-                        <p className="archived-line">{archived.body}</p>
+                        <p key={archived._id}><span className="archived-title">{archived.title}</span>{archived.postedOn}</p>
                     </div>
                 )
             })
         }
 
+
+
         render() {
             return (
             <div className="archived-content">
-                    {/* {this.renderArchivedPost()} */}
+                <h4>Archived Posts</h4>
+                    {this.renderArchivedPost()}
             </div>
             )
         }
 }
 
-// function mapStateToProps({ archived }) {
-//     return { archived };
-//   }
+function mapStateToProps({ archived }) {
+    return { archived };
+  }
   
-//   export default connect(mapStateToProps, { fetchArchivedPost })(ArchivedPost);
+  export default connect(mapStateToProps, { fetchArchivedPosts })(ArchivedPost);

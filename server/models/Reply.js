@@ -9,7 +9,7 @@ const replySchema = new Schema({
    },
    timestamp: {
     type: String,
-    required: [true]
+    required: true,
    },
    reviewed: {
     type: Boolean,
@@ -17,6 +17,7 @@ const replySchema = new Schema({
    },
    firstName: {
       type: String,
+      required: true,
    },
 
    _user: { 
