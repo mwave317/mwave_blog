@@ -1,6 +1,8 @@
  .post-content {
     /* Need to change the left padding for smaller screens */
     white-space: pre-wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2.5vh;
  }
 
 

@@ -15,10 +15,12 @@ class PastPost extends Component {
         renderPastPost() {
             return this.props.past.map(past => {
                 return (
-                    <div key={past._id}>
-                        <h4 className="past-title">{past.title}</h4>
-                        <p className="past-line">{past.body}</p>
-                    </div>
+                    <pre>
+                        <div key={past._id}>
+                            <h4 className="past-title">{past.title}</h4>
+                            <p className="past-line">{past.body}</p>
+                        </div>
+                    </pre>
                 )
             })
         }
