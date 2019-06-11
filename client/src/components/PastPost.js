@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-// import '../css/ArchivedPost.css';
-import '../css/PastPost.css';
-import '../css/Media.css';
 import { connect } from 'react-redux';
 import { fetchPastPost } from '../actions';
+
+import '../css/PastPost.css';
+import '../css/Media.css';
+
 
 class PastPost extends Component {
 

@@ -16,7 +16,7 @@ class Post extends Component {
                 return (
                     <div key={recent._id}>
                         <h4 className="post-title">{recent.title}</h4>
-                        <p className="post-line">{recent.body}</p>
+                        <p>{recent.body}</p>
                     </div>
                 )
             })
@@ -24,9 +24,9 @@ class Post extends Component {
 
         render() {
             return (
-            <div className="post-content">
+            <pre><div className="post-content">
                     {this.renderRecentPost()}
-            </div>
+            </div></pre>
             )
         }
 }
