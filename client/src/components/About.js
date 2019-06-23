@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/About.css';
 import '../css/Media.css';
 
@@ -30,10 +30,9 @@ class About extends Component {
 
     render() {
         return (
-            <div className="about">
-                
+            <Fragment className="about"> 
                 <div className="about-body">{this.getAbout()}</div>
-            </div>
+            </Fragment>
         )
     }
 }

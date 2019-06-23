@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -63,14 +63,14 @@ class Reply extends Component {
         const toggleActiveState = this.state.active ? 'reply-show' : 'hide'; 
 
         return(
-            <div >
+            <Fragment >
                 <p className="reply-status" onClick={this.toggleReplyStatus}>{this.state.replyStatus}</p>
                   <div className={toggleActiveState}>
                     <textarea className="reply-text" onChange= { ev => this.handleChange ('reply', ev)}
                      onKeyDown={ ev => this.props.keyPress(ev)} type='text' placeholder='Enter your reply here...' value= {this.state.reply} />
                      <button type="submit" className="reply-button" onClick={this.submitReply}>Submit</button>
                   </div>
-            </div>
+            </Fragment>
 
 
 

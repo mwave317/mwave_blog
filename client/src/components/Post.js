@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 // import axios from 'axios';
 import '../css/Post.css';
 import '../css/Media.css';
@@ -14,7 +14,7 @@ class Post extends Component {
     renderRecentPost() {
         return this.props.recent.map(recent => {
             return (
-                <div key={recent._id}>
+                <div key={recent._id} className="post-content">
                     <h4 className="post-title">{recent.title}</h4>
                     <p>{recent.body}</p>
                 </div>
@@ -24,11 +24,12 @@ class Post extends Component {
 
     render() {
         return (
-            <pre>
-                <div className="post-content">
+            <Fragment>
+                <pre>
                     {this.renderRecentPost()}
-                </div>
-            </pre>
+                </pre>
+            </Fragment>
+            
         )
     }
 }

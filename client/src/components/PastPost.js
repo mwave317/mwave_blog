@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { fetchPastPost } from '../actions';
 
@@ -16,10 +16,10 @@ class PastPost extends Component {
             return this.props.past.map(past => {
                 return (
                     <pre>
-                        <div key={past._id}>
+                        <Fragment key={past._id}>
                             <h4 className="past-title">{past.title}</h4>
                             <p className="past-line">{past.body}</p>
-                        </div>
+                        </Fragment>
                     </pre>
                 )
             })

@@ -32,12 +32,10 @@ export default class Archives extends Component {
 
     render() {       
         return (
-            <div>
-            <h4 className="archives">Archives</h4>
-           <div className="archives-past">
-              {this.archivedMonths()}
-           </div>
-        </div>
+            <div className="archives-past">
+                <h4 className="archives">Archives</h4>
+                    {this.archivedMonths()}
+            </div>
         )
     }
 }

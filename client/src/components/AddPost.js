@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/AddPost.css';
 import axios from 'axios';
 
@@ -36,8 +36,7 @@ export default class AddPost extends Component {
 
     render() {
         return (
-            <div className="addPost">
-                
+            <Fragment className="addPost">   
                 <form>
                 <h2 className="addPost-title">Add Post</h2>
                     <input className="addPost-heading" onChange= { ev => this.handleChange ('title', ev)}
@@ -48,7 +47,7 @@ export default class AddPost extends Component {
                     
                     <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
                 </form>
-            </div>
+            </Fragment>
             
         );
     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/ArchivedPost.css';
 // import '../css/Media.css';
 import { connect } from 'react-redux';
@@ -24,10 +24,10 @@ class ArchivedPost extends Component {
 
         render() {
             return (
-            <div className="archived-content">
+            <Fragment className="archived-content">
                 <h4>Archived Posts</h4>
                     {this.renderArchivedPost()}
-            </div>
+            </Fragment>
             )
         }
 }

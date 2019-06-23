@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/Home.css';
 import '../css/Media.css';
 import Post from './Post';
@@ -12,7 +12,7 @@ import { fetchPastPost } from '../actions';
 class Home extends Component {
     render() {
             return (  
-                <div>
+                <Fragment>
                     <div className="name">
                         <div className="home-post">
                             { (this.props.postId ? <PastPost postId={this.props.postId} /> : <Post date={ this.props.date } postId={this.props.postId} />)}
@@ -22,7 +22,7 @@ class Home extends Component {
                         </div>
                     </div> 
                     <DisplayComments date={this.props.date} clickedPost={this.props.clickedPost} postId={this.props.postId} keyPress={this.props.keyPress} /> 
-                </div>
+                </Fragment>
             )  
     }
 }

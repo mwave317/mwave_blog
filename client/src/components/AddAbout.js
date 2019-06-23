@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/AddAbout.css';
 import axios from 'axios';
 
@@ -48,7 +48,7 @@ class AddAbout extends Component {
 
     render() {
         return (
-            <div className="addAbout">
+            <Fragment className="addAbout">
                 
                 <form>
                 <h2 className="addAbout-title">Add About</h2>
@@ -58,7 +58,7 @@ class AddAbout extends Component {
                    
                     <button type="submit" onClick={this.submitForm} className="addAbout-button">Submit</button>
                 </form>
-            </div>
+            </Fragment>
             
         );
     }

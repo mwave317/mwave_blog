@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { fetchPostComments } from '../actions';
 import Reply from './Reply';
@@ -43,9 +43,9 @@ class DisplayComment extends Component {
 
     render() {
         return(
-            <div >
+            <Fragment >
                 {this.getComments()}
-            </div>
+            </Fragment>
         )
     }
 }

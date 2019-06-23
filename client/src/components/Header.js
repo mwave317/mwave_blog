@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import '../css/Header.css';
 
@@ -24,7 +24,7 @@ class Header extends Component {
     }
     render() {
         return (
-            <div>
+            <Fragment>
                  <h1 className="title"> My journey in coding</h1>
                     <ul className="header-ul">
                         <li className="header-li"><Link to={'/' }
@@ -33,7 +33,7 @@ class Header extends Component {
                 <li className="header-li">{this.renderContent()}</li>
                     </ul>       
                 <header className="main-header"></header>
-            </div>
+            </Fragment>
         );
     }
 }

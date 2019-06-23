@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/Contact.css';
 import axios from 'axios';
 
@@ -34,7 +34,7 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <div>
+            <Fragment>
                 
             <div className="contact">
                 <h1 className="contact-title">Contact: </h1>
@@ -52,7 +52,7 @@ export default class Contact extends Component {
                         <button type="submit" onClick={this.submitForm} className="contact-button">Submit</button>
                     </form>
             </div>
-            </div>
+            </Fragment>
            
         );
     }
