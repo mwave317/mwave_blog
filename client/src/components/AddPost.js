@@ -45,7 +45,7 @@ export default class AddPost extends Component {
                     <textarea className="addPost-body" onChange= { ev => this.handleChange ('body', ev)}
                     type='text' placeholder='Body.' value= {this.state.body } />
                     
-                    <button type="submit" onClick={this.submitForm} className="addPost-button">Submit</button>
+                    <button type="submit" onClick={(this.submitForm)} className="addPost-button">Submit</button>
                 </form>
             </Fragment>
             
