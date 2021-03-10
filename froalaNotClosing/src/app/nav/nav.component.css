@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+
+ul {
+    background-color: black;
+    color: white;
+    height: 80px;
+    width: 100vw;
+}
+
+a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
